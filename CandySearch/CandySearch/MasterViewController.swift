@@ -51,9 +51,12 @@ class MasterViewController: UITableViewController {
       detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailViewController
     }
     searchController.searchResultsUpdater = self
-    searchController.dimsBackgroundDuringPresentation = false
+    searchController.dimsBackgroundDuringPresentation = true
     definesPresentationContext = true
     tableView.tableHeaderView = searchController.searchBar
+    
+    searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+    searchController.searchBar.delegate = self
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -114,7 +117,8 @@ class MasterViewController: UITableViewController {
     func filterContentForSearchText(searchText: String,score: String = "All") {
         filteredCandies = candies.filter{
             candy in
-            return candy.name.lowercaseString.containsString(searchText.lowercaseString)
+            let categoryMatch = (score == "All") || (candy.category == score)
+            return categoryMatch && candy.name.lowercaseString.containsString(searchText.lowercaseString)
         }
         tableView.reloadData()
     }
@@ -123,8 +127,15 @@ class MasterViewController: UITableViewController {
 //Use the UISearchResultsUpdating protocol to update search results based on information the user enters into the search bar.
 extension MasterViewController : UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
+        let score = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!,score: score)
     }
 }
 
+//use scopeBar
+extension MasterViewController : UISearchBarDelegate {
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, score: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
 
