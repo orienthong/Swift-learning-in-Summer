@@ -56,6 +56,7 @@ class MasterViewController: UITableViewController {
     tableView.tableHeaderView = searchController.searchBar
     
     searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+    
     searchController.searchBar.delegate = self
   }
   

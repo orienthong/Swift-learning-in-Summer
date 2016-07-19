@@ -11,6 +11,7 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -35,7 +36,9 @@ extension ViewController : CLLocationManagerDelegate {
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            print("location::\(location)")
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegionMake(location.coordinate, span)
+            mapView.setRegion(region, animated: true)
         }
     }
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
