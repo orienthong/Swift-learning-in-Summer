@@ -13,6 +13,8 @@ class LocationSearchTable: UITableViewController {
 
     var matchingItems : [MKMapItem] = []
     var mapView:MKMapView? = nil
+    var handleMapSearchDelegate : HandleMapSearch? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,8 +31,6 @@ class LocationSearchTable: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return matchingItems.count
@@ -42,9 +42,15 @@ class LocationSearchTable: UITableViewController {
         cell.detailTextLabel?.text = parseAddress(selectedItem)
         return cell 
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let selectedItem = matchingItems[indexPath.row].placemark
+        handleMapSearchDelegate?.dropPinZoomIn(selectedItem)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
 extension LocationSearchTable : UISearchResultsUpdating {
-    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         guard let mapView = mapView , let searchBarText = searchController.searchBar.text else {
             return
