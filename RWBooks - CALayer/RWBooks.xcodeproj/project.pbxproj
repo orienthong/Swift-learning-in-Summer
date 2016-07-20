@@ -19,6 +19,7 @@
 		82000EE81BD5BACD0074A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82000EE71BD5BACD0074A48D /* AppDelegate.swift */; };
 		82000EEA1BD5C2FB0074A48D /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82000EE91BD5C2FB0074A48D /* BookCell.swift */; };
 		82000EEC1BD60D6D0074A48D /* SizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82000EEB1BD60D6D0074A48D /* SizingLabel.swift */; };
+		A900E4401D3F9F260097E5CC /* RadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900E43F1D3F9F260097E5CC /* RadiusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		82000EE71BD5BACD0074A48D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82000EE91BD5C2FB0074A48D /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		82000EEB1BD60D6D0074A48D /* SizingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingLabel.swift; sourceTree = "<group>"; };
+		A900E43F1D3F9F260097E5CC /* RadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				82000EDB1BD5BAA60074A48D /* AvatarView.swift */,
 				82000EE91BD5C2FB0074A48D /* BookCell.swift */,
 				82000EE51BD5BABF0074A48D /* StatView.swift */,
+				A900E43F1D3F9F260097E5CC /* RadiusView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A900E4401D3F9F260097E5CC /* RadiusView.swift in Sources */,
 				82000EE81BD5BACD0074A48D /* AppDelegate.swift in Sources */,
 				82000EE61BD5BABF0074A48D /* StatView.swift in Sources */,
 				82000EDE1BD5BAAC0074A48D /* Book.swift in Sources */,

@@ -27,13 +27,16 @@ class AvatarView: UIView {
   
   let margin: CGFloat = 30.0
   let labelName = UILabel()
-  let imageView = UIImageView()
+    
+  let layerAvatar = CAShapeLayer()
+  
+  let gradienLayer = CAGradientLayer()
   @IBInspectable var strokeColor: UIColor = UIColor.blackColor() {
         didSet {
             configure()
         }
     }
-  let gradienLayer = CAGradientLayer()
+  
     
     @IBInspectable var startColor: UIColor =  UIColor.redColor(){
         didSet {
@@ -73,16 +76,11 @@ class AvatarView: UIView {
     //Setup the gradientLayer
     layer.addSublayer(gradienLayer)
     
-    //Setup Avatar imageView
-    imageView.layer.borderColor = strokeColor.CGColor
-    imageView.layer.borderWidth = 5.0
-    //Configure the imageView’s layer to mask its contents according to its bounds.
-    imageView.layer.masksToBounds = true
-    
-    // Setup image view
-    imageView.contentMode = .ScaleAspectFit
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(imageView)
+    //Setup the layerAvatar
+    layerAvatar.fillColor = nil
+    layerAvatar.lineWidth = 10
+    layerAvatar.contentsGravity = kCAGravityResizeAspectFill
+    layer.addSublayer(layerAvatar)
     
     
     // Setup label
@@ -99,17 +97,15 @@ class AvatarView: UIView {
     NSLayoutConstraint.activateConstraints([labelCenterX, labelBottom])
     
     // Add constraints for imageView
-    let imageViewCenterX = imageView.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor)
-    let imageViewTop = imageView.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: margin)
-    let imageViewBottom = imageView.bottomAnchor.constraintEqualToAnchor(labelName.topAnchor, constant: -margin)
-    let imageViewWidth = imageView.widthAnchor.constraintEqualToAnchor(imageView.heightAnchor)
-    NSLayoutConstraint.activateConstraints([imageViewCenterX, imageViewTop, imageViewBottom, imageViewWidth])
+    
+    
   }
   
   func configure() {
 
-    // Configure image view and label
-    imageView.image = imageAvatar
+    layerAvatar.strokeColor = strokeColor.CGColor
+    layerAvatar.contents = imageAvatar?.CGImage
+    
     labelName.text = avatarName
     
     // Configure gradientLayer
@@ -120,9 +116,16 @@ class AvatarView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    imageView.layer.cornerRadius = CGRectGetHeight(imageView.bounds) / 2.0
+    let layerAvatarHeight = CGRectGetHeight(self.bounds) - margin - CGRectGetHeight(labelName.bounds)
+    print(CGRectGetHeight(labelName.bounds))
+    layerAvatar.frame = CGRect(x: CGRectGetWidth(self.bounds)/2 - layerAvatarHeight/2, y: margin, width: layerAvatarHeight, height: layerAvatarHeight)
+    let maskLayer = CAShapeLayer()
+    maskLayer.path = UIBezierPath(ovalInRect: layerAvatar.bounds).CGPath
+    layerAvatar.mask = maskLayer
+    layerAvatar.path = maskLayer.path
     
-    gradienLayer.frame = CGRect(x: 0, y: 0, width: CGRectGetWidth(self.bounds), height: CGRectGetMidY(imageView.frame))
+    // Gradient
+    gradienLayer.frame = CGRect(x: 0, y: 0, width: CGRectGetWidth(self.bounds), height: CGRectGetMidY(layerAvatar.frame))
   }
   
 }
