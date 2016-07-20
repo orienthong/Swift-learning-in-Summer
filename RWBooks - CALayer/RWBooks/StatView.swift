@@ -31,10 +31,23 @@ class StatView: UIView {
   var range: CGFloat = 10
   var curValue: CGFloat = 0 {
     didSet {
-      configure()
+      animate()
     }
   }
   let margin: CGFloat = 10
+    
+  let bgLayer = CAShapeLayer()
+    let fgLayer = CAShapeLayer()
+    @IBInspectable var bgColor : UIColor = UIColor.blueColor() {
+        didSet{
+            configure()
+        }
+    }
+    @IBInspectable var fgColor : UIColor = UIColor.yellowColor() {
+        didSet{
+            configure()
+        }
+    }
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -49,6 +62,16 @@ class StatView: UIView {
   }
   
   func setup() {
+    
+    // Setup background layer
+    bgLayer.lineWidth = 20.0
+    bgLayer.fillColor = nil
+    bgLayer.strokeEnd = 1
+    layer.addSublayer(bgLayer)
+    fgLayer.lineWidth = 20.0
+    fgLayer.fillColor = nil
+    fgLayer.strokeEnd = 0
+    layer.addSublayer(fgLayer)
     
     // Setup percent label
     percentLabel.font = UIFont.systemFontOfSize(26)
@@ -75,11 +98,48 @@ class StatView: UIView {
   }
   
   func configure() {
-    percentLabel.text = String(format: "%.0f/%.0f", curValue, range)
+    bgLayer.strokeColor = bgColor.CGColor
+    fgLayer.strokeColor = fgColor.CGColor
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
+    setupShapeLayer(bgLayer)
+    setupShapeLayer(fgLayer)
   }
+    private func setupShapeLayer(shapLayer: CAShapeLayer) {
+        shapLayer.frame = self.bounds
+        let startAngle = DegreesToRadians(135.0)
+        let endAngle = DegreesToRadians(45.0)
+        let center = percentLabel.center
+        let radius = CGRectGetWidth(self.bounds) * 0.35
+        let path = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        shapLayer.path = path.CGPath
+    }
+    private func animate(){
+        percentLabel.text = String(format: "%.0f/%.0f", curValue, range)
+        
+        
+        var fromValue = fgLayer.strokeEnd
+        let toValue = curValue / range
+        if let presentationLayer = fgLayer.presentationLayer() as? CAShapeLayer {
+            fromValue = presentationLayer.strokeEnd
+        }
+        let percentChange = abs(fromValue - toValue)
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = fromValue
+        animation.toValue = toValue
+        
+        animation.duration = CFTimeInterval(percentChange * 4)
+        fgLayer.removeAnimationForKey("stroke")
+        fgLayer.addAnimation(animation, forKey: "stroke")
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        fgLayer.strokeEnd = toValue
+        CATransaction.commit()
+    }
+    
   
 }

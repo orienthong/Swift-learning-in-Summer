@@ -28,8 +28,23 @@ class AvatarView: UIView {
   let margin: CGFloat = 30.0
   let labelName = UILabel()
   let imageView = UIImageView()
-  let strokeColor = UIColor.blackColor()
-  
+  @IBInspectable var strokeColor: UIColor = UIColor.blackColor() {
+        didSet {
+            configure()
+        }
+    }
+  let gradienLayer = CAGradientLayer()
+    
+    @IBInspectable var startColor: UIColor =  UIColor.redColor(){
+        didSet {
+            configure()
+        }
+    }
+    @IBInspectable var endColor: UIColor = UIColor.blueColor(){
+        didSet {
+            configure()
+        }
+    }
   
   @IBInspectable var imageAvatar: UIImage? {
     didSet {
@@ -54,6 +69,9 @@ class AvatarView: UIView {
   }
 
   func setup() {
+    
+    //Setup the gradientLayer
+    layer.addSublayer(gradienLayer)
     
     //Setup Avatar imageView
     imageView.layer.borderColor = strokeColor.CGColor
@@ -93,12 +111,18 @@ class AvatarView: UIView {
     // Configure image view and label
     imageView.image = imageAvatar
     labelName.text = avatarName
+    
+    // Configure gradientLayer
+    gradienLayer.colors = [startColor.CGColor,endColor.CGColor]
+    gradienLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+    gradienLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     imageView.layer.cornerRadius = CGRectGetHeight(imageView.bounds) / 2.0
     
+    gradienLayer.frame = CGRect(x: 0, y: 0, width: CGRectGetWidth(self.bounds), height: CGRectGetMidY(imageView.frame))
   }
   
 }
