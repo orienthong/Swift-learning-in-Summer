@@ -28,6 +28,7 @@ class AvatarView: UIView {
   let margin: CGFloat = 30.0
   let labelName = UILabel()
   let imageView = UIImageView()
+  let strokeColor = UIColor.blackColor()
   
   
   @IBInspectable var imageAvatar: UIImage? {
@@ -54,10 +55,17 @@ class AvatarView: UIView {
 
   func setup() {
     
+    //Setup Avatar imageView
+    imageView.layer.borderColor = strokeColor.CGColor
+    imageView.layer.borderWidth = 5.0
+    //Configure the imageView’s layer to mask its contents according to its bounds.
+    imageView.layer.masksToBounds = true
+    
     // Setup image view
     imageView.contentMode = .ScaleAspectFit
     imageView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(imageView)
+    
     
     // Setup label
     labelName.font = UIFont(name: "AvenirNext-Bold", size: 28.0)
@@ -89,6 +97,8 @@ class AvatarView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews()
+    imageView.layer.cornerRadius = CGRectGetHeight(imageView.bounds) / 2.0
+    
   }
   
 }
