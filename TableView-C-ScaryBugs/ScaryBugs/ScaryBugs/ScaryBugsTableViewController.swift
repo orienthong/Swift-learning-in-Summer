@@ -20,11 +20,26 @@ class ScaryBugsTableViewController: UITableViewController {
     
     tableView.estimatedRowHeight = 60.0
     tableView.rowHeight = UITableViewAutomaticDimension
-    
-    
-    
   }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for index in 0 ... bugSections.count - 1 {
+            let section = bugSections[index]
+            var counter = 0
+            while counter < section.bugs.count {
+                let bug = section.bugs[counter]
+                if bug.howScary.rawValue != index {
+                    section.bugs.removeAtIndex(counter)
+                    let newSection = bugSections[bug.howScary.rawValue]
+                    newSection.bugs.append(bug)
+                } else {
+                    counter += 1
+                }
+            }
+        }
+        tableView.reloadData()
+    }
     
     private func setupBugs() {
         bugSections.append(BugSection(howScary: .NotScary))
@@ -188,15 +203,12 @@ class ScaryBugsTableViewController: UITableViewController {
     //MARK: -sugue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "GoToEdit" {
-            
+            print("fsd")
             let controller = segue.destinationViewController as? EditingTableViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let bugSection = bugSections[indexPath.section]
             controller?.bug = bugSection.bugs[indexPath.row]
         }
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
+    
 }
