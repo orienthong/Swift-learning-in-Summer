@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzS-Nj-t5f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scary Bugs-->
@@ -20,19 +21,38 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-WI-jLg">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-bZ-M1b">
-                                            <rect key="frame" x="68" y="11" width="141" height="38"/>
-                                            <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="45b-UZ-1WV">
-                                            <rect key="frame" x="569" y="18" width="23" height="23"/>
-                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="06d-i9-Rip">
+                                            <rect key="frame" x="0.0" y="0.0" width="592" height="60"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-WI-jLg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="9Kw-T4-WfH"/>
+                                                        <constraint firstAttribute="width" constant="60" id="gNj-Ed-iKi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-bZ-M1b">
+                                                    <rect key="frame" x="67" y="11" width="495" height="38"/>
+                                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="45b-UZ-1WV">
+                                                    <rect key="frame" x="569" y="19" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="Uei-Pa-5eP"/>
+                                                        <constraint firstAttribute="height" constant="23" id="g45-Ku-iSF"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="06d-i9-Rip" secondAttribute="bottom" constant="-9" id="Pe5-hK-SXy"/>
+                                        <constraint firstItem="06d-i9-Rip" firstAttribute="leading" secondItem="UFX-eb-Cfy" secondAttribute="leadingMargin" constant="-8" id="Tp5-Cq-EUM"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="06d-i9-Rip" secondAttribute="trailing" id="guG-oG-5Gb"/>
+                                        <constraint firstItem="06d-i9-Rip" firstAttribute="top" secondItem="UFX-eb-Cfy" secondAttribute="topMargin" constant="-8" id="iQu-fD-nIN"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bugImageView" destination="9Ku-WI-jLg" id="gfH-gF-IuD"/>
