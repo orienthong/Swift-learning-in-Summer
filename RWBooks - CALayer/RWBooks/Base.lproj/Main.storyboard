@@ -134,7 +134,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="SeI-ba-3gv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1852" y="863"/>
+            <point key="canvasLocation" x="1860" y="847"/>
         </scene>
         <!--Profile-->
         <scene sceneID="TVc-TU-eIL">
@@ -249,6 +249,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="16I-Ie-OKr"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collectionView" destination="ODc-uh-4AW" id="WC8-QA-jEy"/>
                         <outlet property="followButton" destination="T7Z-U1-mce" id="GS3-Yo-byL"/>
