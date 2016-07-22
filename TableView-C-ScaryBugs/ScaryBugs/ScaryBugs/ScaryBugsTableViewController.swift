@@ -184,4 +184,14 @@ class ScaryBugsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60.0
     }
+    //MARK: -sugue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GoToEdit" {
+            
+            let controller = segue.destinationViewController as? EditingTableViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let bugSection = bugSections[indexPath.section]
+            controller?.bug = bugSection.bugs[indexPath.row]
+        }
+    }
 }
