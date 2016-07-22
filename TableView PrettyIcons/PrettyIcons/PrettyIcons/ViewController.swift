@@ -26,10 +26,13 @@ class ViewController: UIViewController {
 
   var iconSets = [IconSet]()
   
+    @IBOutlet weak var tableView: UITableView!
   override func viewDidLoad() {
     super.viewDidLoad()
     
     iconSets = IconSet.iconSets()
+    
+    navigationItem.rightBarButtonItem = editButtonItem()
     automaticallyAdjustsScrollViewInsets = false
   }
 
@@ -67,5 +70,20 @@ extension ViewController : UITableViewDataSource {
   }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return iconSets[section].name
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let set = iconSets[indexPath.section]
+            set.icons.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        if editing {
+            tableView.setEditing(true, animated: true)
+        } else {
+            tableView.setEditing(false , animated: true)
+        }
     }
 }
