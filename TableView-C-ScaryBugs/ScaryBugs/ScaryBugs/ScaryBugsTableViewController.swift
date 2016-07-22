@@ -17,6 +17,10 @@ class ScaryBugsTableViewController: UITableViewController {
     navigationItem.rightBarButtonItem = editButtonItem()
     tableView.allowsSelectionDuringEditing = true
     setupBugs()
+    
+    tableView.estimatedRowHeight = 60.0
+    tableView.rowHeight = UITableViewAutomaticDimension
+    
   }
     /*case NotScary
     case ALittleScary
@@ -49,23 +53,29 @@ class ScaryBugsTableViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
+    let cell: UITableViewCell
     
-    if indexPath.row >= bugSections[indexPath.section].bugs.count && editing{
-        
-        cell.imageView?.image = nil
-        cell.textLabel?.text = "Add bug"
-        cell.detailTextLabel?.text = nil
-    } else {
     let bugSection = bugSections[indexPath.section]
-    let bug = bugSection.bugs[indexPath.row]
-    cell.textLabel?.text = bug.name
-    cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(bug.howScary)
-        guard let imageView = cell.imageView else { return cell }
-        if let bugImage = bug.image {
-            imageView.image = bugImage
-        } else {
-            imageView.image = nil
+    if indexPath.row >= bugSection.bugs.count && editing{
+        cell = tableView.dequeueReusableCellWithIdentifier("NewRowCell",forIndexPath: indexPath)
+        cell.textLabel?.text = "Add bug"
+        cell.imageView?.image = nil
+        cell.detailTextLabel?.text = nil
+    }else {
+        cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
+        if let bugcell = cell as? ScaryBugCell{
+            let bug = bugSection.bugs[indexPath.row]
+            if let bugImage = bug.image {
+                bugcell.bugImageView.image = bugImage
+            } else {
+                bugcell.bugImageView.image = nil
+            }
+            bugcell.bugNameLabel.text = bug.name
+            if bug.howScary.rawValue > ScaryFactor.AverageScary.rawValue {
+                bugcell.howScaryImageView.image = UIImage(named: "shockedface2_full")
+            }else {
+                bugcell.howScaryImageView.image = UIImage(named: "shockedface2_empty")
+            }
         }
     }
     return cell
@@ -170,5 +180,8 @@ class ScaryBugsTableViewController: UITableViewController {
             return NSIndexPath(forRow: bugSection.bugs.count - 1, inSection: proposedDestinationIndexPath.section)
         }
         return proposedDestinationIndexPath
+    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60.0
     }
 }
