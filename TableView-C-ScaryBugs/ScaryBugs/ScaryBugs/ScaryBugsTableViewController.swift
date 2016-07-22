@@ -41,18 +41,26 @@ class ScaryBugsTableViewController: UITableViewController {
         return bugSections.count
     }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    let adjustEditing = editing ? 1 : 0
     let bugSection = bugSections[section]
-    return bugSection.bugs.count
+    return bugSection.bugs.count + adjustEditing
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
+    
+    if indexPath.row >= bugSections[indexPath.section].bugs.count {
+        cell.imageView?.image = nil
+        cell.textLabel?.text = "Add bug"
+        cell.detailTextLabel?.text = nil
+    } else {
     let bugSection = bugSections[indexPath.section]
     let bug = bugSection.bugs[indexPath.row]
     cell.textLabel?.text = bug.name
     cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(bug.howScary)
     if let imageView = cell.imageView, bugImage = bug.image {
       imageView.image = bugImage
+    }
     }
     return cell
   }
@@ -65,5 +73,8 @@ class ScaryBugsTableViewController: UITableViewController {
             section.bugs.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+    }
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
     }
 }

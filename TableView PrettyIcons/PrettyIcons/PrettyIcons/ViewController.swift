@@ -32,7 +32,9 @@ class ViewController: UIViewController {
     
     iconSets = IconSet.iconSets()
     
+    
     navigationItem.rightBarButtonItem = editButtonItem()
+    tableView.allowsSelectionDuringEditing = true
     automaticallyAdjustsScrollViewInsets = false
   }
 
@@ -71,11 +73,16 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate {
     cell.textLabel?.text = icon.title
     cell.detailTextLabel?.text = icon.subtitle
     
-    if let imageView = cell.imageView, iconImage = icon.image {
-      imageView.image = iconImage
+        guard let imageView = cell.imageView else {
+            return cell
+        }
+        if let iconImage = icon.image {
+            imageView.image = iconImage
+        } else {
+            imageView.image = nil
+        }
     }
-    }
-    return cell
+      return cell
   }
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return iconSets[section].name
@@ -122,4 +129,19 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate {
             return .Delete
         }
     }
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        let set = iconSets[indexPath.section]
+        if set.icons.count > indexPath.row && editing {
+            return nil
+        }
+        return indexPath
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let set = iconSets[indexPath.section]
+        if indexPath.row >= set.icons.count && editing {
+            self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
+        }
+    }
+    
 }
