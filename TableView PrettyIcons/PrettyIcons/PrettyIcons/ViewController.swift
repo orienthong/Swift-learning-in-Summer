@@ -143,5 +143,32 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate {
             self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
         }
     }
-    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let set = iconSets[indexPath.section]
+        if indexPath.row >= set.icons.count {
+            return false
+        } else {
+            return true
+        }
+    }
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let sourceSet = iconSets[sourceIndexPath.section]
+        let iconToMove = sourceSet.icons[sourceIndexPath.row]
+        let destinationSet = iconSets[destinationIndexPath.section]
+        
+        if sourceIndexPath == destinationIndexPath { return }
+        if sourceSet == destinationSet {
+            swap(&sourceSet.icons[sourceIndexPath.row], &destinationSet.icons[destinationIndexPath.row])
+        } else {
+            destinationSet.icons.insert(iconToMove, atIndex: destinationIndexPath.row)
+            sourceSet.icons.removeAtIndex(sourceIndexPath.row)
+        }
+    }
+    func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
+        let set = iconSets[proposedDestinationIndexPath.section]
+        if set.icons.count <= proposedDestinationIndexPath.row {
+            return NSIndexPath(forRow: set.icons.count - 1, inSection: proposedDestinationIndexPath.section)
+        }
+        return proposedDestinationIndexPath
+    }
 }
