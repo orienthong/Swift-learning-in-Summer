@@ -21,12 +21,10 @@ class ScaryBugsTableViewController: UITableViewController {
     tableView.estimatedRowHeight = 60.0
     tableView.rowHeight = UITableViewAutomaticDimension
     
+    
+    
   }
-    /*case NotScary
-    case ALittleScary
-    case AverageScary
-    case QuiteScary
-    case Aiiiiieeeee*/
+    
     
     private func setupBugs() {
         bugSections.append(BugSection(howScary: .NotScary))
@@ -44,6 +42,7 @@ class ScaryBugsTableViewController: UITableViewController {
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return bugSections.count
+        
     }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
@@ -56,6 +55,7 @@ class ScaryBugsTableViewController: UITableViewController {
     let cell: UITableViewCell
     
     let bugSection = bugSections[indexPath.section]
+    
     if indexPath.row >= bugSection.bugs.count && editing{
         cell = tableView.dequeueReusableCellWithIdentifier("NewRowCell",forIndexPath: indexPath)
         cell.textLabel?.text = "Add bug"
@@ -65,6 +65,7 @@ class ScaryBugsTableViewController: UITableViewController {
         cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
         if let bugcell = cell as? ScaryBugCell{
             let bug = bugSection.bugs[indexPath.row]
+//            print("\(bug.name)")
             if let bugImage = bug.image {
                 bugcell.bugImageView.image = bugImage
             } else {
@@ -193,5 +194,9 @@ class ScaryBugsTableViewController: UITableViewController {
             let bugSection = bugSections[indexPath.section]
             controller?.bug = bugSection.bugs[indexPath.row]
         }
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 }

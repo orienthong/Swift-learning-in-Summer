@@ -10,6 +10,7 @@
 		A93DF7701D422D970015E4B7 /* ScaryBugCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DF76F1D422D970015E4B7 /* ScaryBugCell.swift */; };
 		A9677F9C1D41B3F900BE808B /* BugSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9677F9B1D41B3F900BE808B /* BugSection.swift */; };
 		A996A3A51D4269AD004D17D6 /* EditingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996A3A41D4269AD004D17D6 /* EditingTableViewController.swift */; };
+		A996A3A71D4275E3004D17D6 /* HowScaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996A3A61D4275E3004D17D6 /* HowScaryTableViewController.swift */; };
 		D331E0D81BDEC825005B8F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331E0D71BDEC825005B8F78 /* AppDelegate.swift */; };
 		D331E0DD1BDEC825005B8F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D331E0DB1BDEC825005B8F78 /* Main.storyboard */; };
 		D331E0DF1BDEC825005B8F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D331E0DE1BDEC825005B8F78 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		A93DF76F1D422D970015E4B7 /* ScaryBugCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBugCell.swift; sourceTree = "<group>"; };
 		A9677F9B1D41B3F900BE808B /* BugSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugSection.swift; sourceTree = "<group>"; };
 		A996A3A41D4269AD004D17D6 /* EditingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingTableViewController.swift; sourceTree = "<group>"; };
+		A996A3A61D4275E3004D17D6 /* HowScaryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowScaryTableViewController.swift; sourceTree = "<group>"; };
 		D331E0D41BDEC825005B8F78 /* ScaryBugs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D331E0D71BDEC825005B8F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D331E0DC1BDEC825005B8F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				A9677F9B1D41B3F900BE808B /* BugSection.swift */,
 				A93DF76F1D422D970015E4B7 /* ScaryBugCell.swift */,
 				A996A3A41D4269AD004D17D6 /* EditingTableViewController.swift */,
+				A996A3A61D4275E3004D17D6 /* HowScaryTableViewController.swift */,
 			);
 			path = ScaryBugs;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				D331E0D81BDEC825005B8F78 /* AppDelegate.swift in Sources */,
 				A9677F9C1D41B3F900BE808B /* BugSection.swift in Sources */,
+				A996A3A71D4275E3004D17D6 /* HowScaryTableViewController.swift in Sources */,
 				A996A3A51D4269AD004D17D6 /* EditingTableViewController.swift in Sources */,
 				D331E1161BDEC847005B8F78 /* ScaryBug.swift in Sources */,
 				D3D9D7771BDFBF5F00DE9F44 /* ScaryBugsTableViewController.swift in Sources */,

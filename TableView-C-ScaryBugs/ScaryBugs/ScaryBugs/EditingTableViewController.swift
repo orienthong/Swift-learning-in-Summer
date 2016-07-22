@@ -16,7 +16,7 @@ class EditingTableViewController: UITableViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
 
-    @IBOutlet weak var ratingTextField: UITextField!
+    @IBOutlet weak var ratingLabel: UILabel!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,7 +25,7 @@ class EditingTableViewController: UITableViewController {
             bugImageView.image = bugImage
         }
         nameTextField.text = bug.name
-        ratingTextField.text = ScaryBug.scaryFactorToString(bug.howScary)
+        ratingLabel.text = ScaryBug.scaryFactorToString(bug.howScary)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -37,8 +37,9 @@ class EditingTableViewController: UITableViewController {
         if let text = nameTextField.text {
             bug.name = text
         }
-        //what about the rating?
+        //what about the rating? isDone
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -57,6 +58,16 @@ class EditingTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    //MARK: - segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GoToHowScary" {
+            
+            if let controller = segue.destinationViewController as? HowScaryTableViewController {
+                controller.bug = bug
+                
+            }
+        }
     }
 }
 extension EditingTableViewController : UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
