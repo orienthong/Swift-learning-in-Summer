@@ -15,5 +15,11 @@ class BugSection {
     init(howScary: ScaryFactor) {
         self.howScary = howScary
     }
-    
+}
+func ==(lhs: BugSection, rhs: BugSection) -> Bool {
+    var isEqual = false
+    if (lhs.howScary == rhs.howScary && lhs.bugs.count == rhs.bugs.count) {
+        isEqual = true
+    }
+    return isEqual
 }

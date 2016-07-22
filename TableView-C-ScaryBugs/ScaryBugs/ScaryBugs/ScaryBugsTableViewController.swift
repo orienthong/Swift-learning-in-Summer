@@ -128,4 +128,47 @@ class ScaryBugsTableViewController: UITableViewController {
             self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
         }
     }
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        let bugSection = bugSections[indexPath.section]
+        if bugSection.bugs.count <= indexPath.row && editing {
+            return false
+        } else {
+            return true
+        }
+    }
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let sourceSection = bugSections[sourceIndexPath.section]
+        let bugToMove = sourceSection.bugs[sourceIndexPath.row]
+        
+        let destinationSection = bugSections[destinationIndexPath.section]
+        
+        if sourceIndexPath == destinationIndexPath {
+            //don't move
+            return
+        }
+        if destinationSection == sourceSection {
+            swap(&destinationSection.bugs[destinationIndexPath.row], &sourceSection.bugs[sourceIndexPath.row])
+        } else {
+            bugToMove.howScary = destinationSection.howScary
+            destinationSection.bugs.insert(bugToMove, atIndex: destinationIndexPath.row)
+            sourceSection.bugs.removeAtIndex(sourceIndexPath.row)
+        }
+        //fix the bug when move different section , the row information didn't refresh 
+        let delayInSections: Double = 0.2
+        let dispatchTime =  Int64(delayInSections * Double(NSEC_PER_SEC))
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, dispatchTime)
+        dispatch_after(popTime, dispatch_get_main_queue(), {
+            () -> Void in
+            self.tableView.reloadRowsAtIndexPaths([destinationIndexPath], withRowAnimation: .None)
+        })
+    }
+    //It doesn’t make sense to allow a user to move a row below the Add Bug row
+    override func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
+        let bugSection = bugSections[proposedDestinationIndexPath.section]
+        if proposedDestinationIndexPath.row >= bugSection.bugs.count {
+            return NSIndexPath(forRow: bugSection.bugs.count - 1, inSection: proposedDestinationIndexPath.section)
+        }
+        return proposedDestinationIndexPath
+    }
 }
