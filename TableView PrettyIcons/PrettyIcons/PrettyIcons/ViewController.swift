@@ -41,6 +41,10 @@ class ViewController: UIViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
   }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -177,5 +181,15 @@ extension ViewController : UITableViewDataSource,UITableViewDelegate {
             return NSIndexPath(forRow: set.icons.count - 1, inSection: proposedDestinationIndexPath.section)
         }
         return proposedDestinationIndexPath
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if segue.identifier == "GoToEdit" {
+            let controller = segue.destinationViewController as? EditTableViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let set = iconSets[indexPath.section]
+                let icon = set.icons[indexPath.row]
+                controller?.icon = icon
+            }
+        }
     }
 }

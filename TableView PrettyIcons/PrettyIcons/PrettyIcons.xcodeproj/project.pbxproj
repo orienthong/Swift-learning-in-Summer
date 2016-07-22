@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A93DF7721D4236160015E4B7 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DF7711D4236160015E4B7 /* IconTableViewCell.swift */; };
+		A996A3A31D425F09004D17D6 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996A3A21D425F09004D17D6 /* EditTableViewController.swift */; };
 		D34F17B61BC43EF800A09B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F17B51BC43EF800A09B8C /* AppDelegate.swift */; };
 		D34F17B81BC43EF800A09B8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F17B71BC43EF800A09B8C /* ViewController.swift */; };
 		D34F17BB1BC43EF800A09B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34F17B91BC43EF800A09B8C /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		A93DF7711D4236160015E4B7 /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
+		A996A3A21D425F09004D17D6 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		D34F17B21BC43EF800A09B8C /* PrettyIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34F17B51BC43EF800A09B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34F17B71BC43EF800A09B8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				D34F17C11BC43EF800A09B8C /* Info.plist */,
 				D34F17C71BC43F4500A09B8C /* Icon.swift */,
 				D34F17C91BC4427C00A09B8C /* IconSet.swift */,
+				A996A3A21D425F09004D17D6 /* EditTableViewController.swift */,
 			);
 			path = PrettyIcons;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93DF7721D4236160015E4B7 /* IconTableViewCell.swift in Sources */,
+				A996A3A31D425F09004D17D6 /* EditTableViewController.swift in Sources */,
 				D34F17C81BC43F4500A09B8C /* Icon.swift in Sources */,
 				D34F17CA1BC4427C00A09B8C /* IconSet.swift in Sources */,
 				D34F17B81BC43EF800A09B8C /* ViewController.swift in Sources */,
