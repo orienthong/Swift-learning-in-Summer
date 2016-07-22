@@ -12,7 +12,9 @@ class ScaryBugsTableViewController: UITableViewController {
   
   var bugs = [ScaryBug]()
   var bugSections = [BugSection]()
-  override func viewDidLoad() { super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    navigationItem.rightBarButtonItem = editButtonItem()
     setupBugs()
   }
     /*case NotScary
@@ -56,5 +58,12 @@ class ScaryBugsTableViewController: UITableViewController {
   }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return ScaryBug.scaryFactorToString(bugSections[section].howScary)
+    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let section = bugSections[indexPath.section]
+            section.bugs.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
     }
 }
