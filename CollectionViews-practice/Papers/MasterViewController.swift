@@ -119,5 +119,12 @@ class MasterViewController: UICollectionViewController {
     performSegueWithIdentifier("MasterToDetail", sender: paper)
     }
   }
+    
+    @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+        let indexPath = papersDataSource.indexPathForNewRandomPaper()
+        UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [], animations: {
+            self.collectionView?.insertItemsAtIndexPaths([indexPath])
+            }, completion: nil)
+    }
   
 }
