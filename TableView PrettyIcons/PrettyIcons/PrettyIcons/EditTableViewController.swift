@@ -54,6 +54,15 @@ class EditTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //MARK: -segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Rating" {
+            if let controller = segue.destinationViewController as? RatingTableViewController {
+                controller.icon = icon
+            }
+        }
+    }
+    
 }
 extension EditTableViewController : UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {

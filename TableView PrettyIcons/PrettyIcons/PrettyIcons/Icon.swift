@@ -28,6 +28,7 @@ enum RatingType : Int {
   case OK
   case Nice
   case Awesome
+  case Nothing
 }
 
 class Icon {

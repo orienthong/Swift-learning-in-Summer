@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A93DF7721D4236160015E4B7 /* IconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DF7711D4236160015E4B7 /* IconTableViewCell.swift */; };
+		A97DC8381D42E31F0079B416 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97DC8371D42E31F0079B416 /* RatingTableViewController.swift */; };
 		A996A3A31D425F09004D17D6 /* EditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A996A3A21D425F09004D17D6 /* EditTableViewController.swift */; };
 		D34F17B61BC43EF800A09B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F17B51BC43EF800A09B8C /* AppDelegate.swift */; };
 		D34F17B81BC43EF800A09B8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F17B71BC43EF800A09B8C /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		A93DF7711D4236160015E4B7 /* IconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTableViewCell.swift; sourceTree = "<group>"; };
+		A97DC8371D42E31F0079B416 /* RatingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 		A996A3A21D425F09004D17D6 /* EditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTableViewController.swift; sourceTree = "<group>"; };
 		D34F17B21BC43EF800A09B8C /* PrettyIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34F17B51BC43EF800A09B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 				D34F17CF1BC44CCC00A09B8C /* Icons */,
 				D34F17E41BC44CCC00A09B8C /* Images */,
 				D34F17B51BC43EF800A09B8C /* AppDelegate.swift */,
-				D34F17B71BC43EF800A09B8C /* ViewController.swift */,
 				D34F17B91BC43EF800A09B8C /* Main.storyboard */,
 				A93DF7711D4236160015E4B7 /* IconTableViewCell.swift */,
 				D34F17BC1BC43EF800A09B8C /* Assets.xcassets */,
@@ -119,7 +120,9 @@
 				D34F17C11BC43EF800A09B8C /* Info.plist */,
 				D34F17C71BC43F4500A09B8C /* Icon.swift */,
 				D34F17C91BC4427C00A09B8C /* IconSet.swift */,
+				D34F17B71BC43EF800A09B8C /* ViewController.swift */,
 				A996A3A21D425F09004D17D6 /* EditTableViewController.swift */,
+				A97DC8371D42E31F0079B416 /* RatingTableViewController.swift */,
 			);
 			path = PrettyIcons;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93DF7721D4236160015E4B7 /* IconTableViewCell.swift in Sources */,
+				A97DC8381D42E31F0079B416 /* RatingTableViewController.swift in Sources */,
 				A996A3A31D425F09004D17D6 /* EditTableViewController.swift in Sources */,
 				D34F17C81BC43F4500A09B8C /* Icon.swift in Sources */,
 				D34F17CA1BC4427C00A09B8C /* IconSet.swift in Sources */,

@@ -43,6 +43,7 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         tableView.reloadData()
     }
   override func didReceiveMemoryWarning() {
