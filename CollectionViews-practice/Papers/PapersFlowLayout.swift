@@ -10,9 +10,10 @@ import UIKit
 
 class PapersFlowLayout: UICollectionViewFlowLayout {
     var appearingIndexPath: NSIndexPath?
+    var disappearingIndexPaths: [NSIndexPath]?
     
     override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
-        guard let attribute = super.initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath), _ = appearingIndexPath else {
+        guard let attribute = super.initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath), indexPath = appearingIndexPath where indexPath == itemIndexPath else {
             return nil
         }
         attribute.alpha = 1.0
@@ -21,5 +22,14 @@ class PapersFlowLayout: UICollectionViewFlowLayout {
         attribute.zIndex = 99
         
         return attribute
+    }
+    override func finalLayoutAttributesForDisappearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        guard let attributes = super.finalLayoutAttributesForDisappearingItemAtIndexPath(itemIndexPath), indexPaths = disappearingIndexPaths where indexPaths.contains(itemIndexPath) else {
+            return nil
+        }
+        attributes.alpha = 1.0
+        attributes.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        attributes.zIndex = -1
+        return attributes
     }
 }
