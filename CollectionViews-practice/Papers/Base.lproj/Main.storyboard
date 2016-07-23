@@ -66,6 +66,13 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-Kh-aen">
+                                            <rect key="frame" x="89" y="174" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="4YL-rm-7u5"/>
+                                                <constraint firstAttribute="width" constant="22" id="xcW-hN-btS"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -75,14 +82,17 @@
                                     <constraint firstAttribute="trailing" secondItem="OtB-G9-FzR" secondAttribute="trailing" id="5c3-9a-9TY"/>
                                     <constraint firstItem="OtB-G9-FzR" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="6hq-cT-BXK"/>
                                     <constraint firstAttribute="trailing" secondItem="ala-B3-hIp" secondAttribute="trailing" id="8eN-VL-p3k"/>
+                                    <constraint firstAttribute="bottom" secondItem="7aO-Kh-aen" secondAttribute="bottom" constant="4" id="JCg-4N-1Cw"/>
                                     <constraint firstAttribute="trailing" secondItem="AAA-1p-vcl" secondAttribute="trailing" id="Nsw-gF-erS"/>
                                     <constraint firstAttribute="bottom" secondItem="OtB-G9-FzR" secondAttribute="bottom" id="S86-Fh-2u3"/>
                                     <constraint firstItem="ala-B3-hIp" firstAttribute="top" secondItem="Aqe-CW-8BC" secondAttribute="top" id="cRw-ym-N2A"/>
                                     <constraint firstItem="AAA-1p-vcl" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="ece-qh-oMA"/>
                                     <constraint firstItem="ala-B3-hIp" firstAttribute="leading" secondItem="Aqe-CW-8BC" secondAttribute="leading" id="idG-BR-WLF"/>
+                                    <constraint firstItem="7aO-Kh-aen" firstAttribute="centerX" secondItem="Aqe-CW-8BC" secondAttribute="centerX" id="vZn-37-s7S"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="captionLabel" destination="OtB-G9-FzR" id="kmz-Sy-6av"/>
+                                    <outlet property="checkImageView" destination="7aO-Kh-aen" id="Mmu-Cx-6vO"/>
                                     <outlet property="gradientView" destination="AAA-1p-vcl" id="ev4-I0-hLD"/>
                                     <outlet property="paperImageView" destination="ala-B3-hIp" id="ZbX-ZB-DFT"/>
                                 </connections>
@@ -127,6 +137,15 @@
                             <outlet property="delegate" destination="UMP-Yc-5ek" id="Phd-Tu-rsh"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9Pp-DH-bOc"/>
+                        <barButtonItem title="Item" systemItem="trash" id="SyU-Kp-WGw">
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="UMP-Yc-5ek" id="SQT-lU-Svw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="q8Z-Fi-7Rj"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="kyW-qM-Qw0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="blT-cw-g8y">
                             <connections>
@@ -135,6 +154,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="blT-cw-g8y" id="I98-lW-qTX"/>
                         <segue destination="ljD-dV-frr" kind="show" identifier="MasterToDetail" id="eY3-C5-4KO"/>
                     </connections>
                 </collectionViewController>
@@ -176,4 +196,7 @@
             <point key="canvasLocation" x="1588" y="467"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unchecked" width="22" height="22"/>
+    </resources>
 </document>
