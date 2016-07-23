@@ -43,6 +43,8 @@ class MasterViewController: UICollectionViewController {
     let layout = collectionViewLayout as! UICollectionViewFlowLayout
     layout.itemSize = CGSize(width: width, height: width)
     
+    layout.sectionHeadersPinToVisibleBounds = true
+    
   }
   
   
@@ -168,6 +170,9 @@ class MasterViewController: UICollectionViewController {
                 (_: Bool) -> Void in
                 layout.disappearingIndexPaths = nil
         })
+    }
+    override func collectionView(collectionView: UICollectionView, moveItemAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        papersDataSource.movePaperAtIndexPath(sourceIndexPath, toIndexPath: destinationIndexPath)
     }
   
 }

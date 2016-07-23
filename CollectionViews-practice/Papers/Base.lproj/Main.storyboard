@@ -121,6 +121,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="xiK-7x-MST" firstAttribute="top" secondItem="T2v-1j-bZO" secondAttribute="top" constant="8" id="1fl-Tg-mZc"/>
                                 <constraint firstItem="xiK-7x-MST" firstAttribute="leading" secondItem="T2v-1j-bZO" secondAttribute="leading" constant="8" id="LLm-E3-kRZ"/>

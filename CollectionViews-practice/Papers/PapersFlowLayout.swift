@@ -19,7 +19,7 @@ class PapersFlowLayout: UICollectionViewFlowLayout {
         attribute.alpha = 1.0
         attribute.center = CGPoint(x: CGRectGetWidth((collectionView?.frame)!) - 23.5, y: -24.5)
         attribute.transform = CGAffineTransformMakeScale(0.15, 0.15)
-        attribute.zIndex = 99
+        attribute.zIndex = 5
         
         return attribute
     }
