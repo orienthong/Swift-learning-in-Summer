@@ -10,76 +10,77 @@ import UIKit
 
 class ScaryBugsTableViewController: UITableViewController {
   
-  var bugs = [ScaryBug]()
-  var bugSections = [BugSection]()
+    var allSections: [[ScaryBug?]?]!
+//  var bugSections = [BugSection]()
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationItem.rightBarButtonItem = editButtonItem()
     tableView.allowsSelectionDuringEditing = true
     setupBugs()
-    
     tableView.estimatedRowHeight = 60.0
     tableView.rowHeight = UITableViewAutomaticDimension
+
   }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        for index in 0 ... bugSections.count - 1 {
-            let section = bugSections[index]
-            var counter = 0
-            while counter < section.bugs.count {
-                let bug = section.bugs[counter]
-                if bug.howScary.rawValue != index {
-                    section.bugs.removeAtIndex(counter)
-                    let newSection = bugSections[bug.howScary.rawValue]
-                    newSection.bugs.append(bug)
-                } else {
-                    counter += 1
-                }
-            }
-        }
         tableView.reloadData()
     }
-    
     private func setupBugs() {
-        bugSections.append(BugSection(howScary: .NotScary))
-        bugSections.append(BugSection(howScary: .ALittleScary))
-        bugSections.append(BugSection(howScary: .AverageScary))
-        bugSections.append(BugSection(howScary: .QuiteScary))
-        bugSections.append(BugSection(howScary: .Aiiiiieeeee))
-        
-        let bugs = ScaryBug.bugs()
-        for bug: ScaryBug in bugs {
-            let bugSection = bugSections[bug.howScary.rawValue]
-            bugSection.bugs.append(bug)
+        //1
+        let sectionTitlesCount = UILocalizedIndexedCollation.currentCollation().sectionTitles.count
+        allSections = [[ScaryBug?]?](count: sectionTitlesCount,repeatedValue: nil)
+        print(allSections)
+        print(allSections[1]?[0]?.name)
+        for index in 0 ..< allSections.count {
+            print("Why")
+            if let _ = allSections[index] {
+                print("is ok")
+                
+            }
         }
-        
+        //2
+        let bugs = ScaryBug.bugs()
+        for bug in bugs{
+            let collation = UILocalizedIndexedCollation.currentCollation()
+            let sectionNumber = collation.sectionForObject(bug, collationStringSelector: Selector("name"))
+            print(sectionNumber)
+            if allSections[sectionNumber] == nil {
+                print("abc\(allSections[sectionNumber])")
+                allSections[sectionNumber] = [ScaryBug?]()
+            }
+            allSections[sectionNumber]!.append(bug)
+        }
+        //3
+        for index in 0 ... sectionTitlesCount - 1{
+            let bugs = allSections[index]
+            if let bugs = bugs {
+                allSections[index] = bugs.sort(<)
+            }
+        }
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return bugSections.count
+        return allSections.count
         
     }
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    let adjustEditing = editing ? 1 : 0
-    let bugSection = bugSections[section]
-    return bugSection.bugs.count + adjustEditing
+    var rows = 0
+    if let bugSection = allSections[section] {
+        rows = bugSection.count
+    }
+    return rows
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell: UITableViewCell
     
-    let bugSection = bugSections[indexPath.section]
+    let bugSection = allSections[indexPath.section]!
     
-    if indexPath.row >= bugSection.bugs.count && editing{
-        cell = tableView.dequeueReusableCellWithIdentifier("NewRowCell",forIndexPath: indexPath)
-        cell.textLabel?.text = "Add bug"
-        cell.imageView?.image = nil
-        cell.detailTextLabel?.text = nil
-    }else {
+    
         cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
         if let bugcell = cell as? ScaryBugCell{
-            let bug = bugSection.bugs[indexPath.row]
+            let bug = bugSection[indexPath.row]!
 //            print("\(bug.name)")
             if let bugImage = bug.image {
                 bugcell.bugImageView.image = bugImage
@@ -92,110 +93,58 @@ class ScaryBugsTableViewController: UITableViewController {
             }else {
                 bugcell.howScaryImageView.image = UIImage(named: "shockedface2_empty")
             }
-        }
+        
     }
     return cell
   }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ScaryBug.scaryFactorToString(bugSections[section].howScary)
+        return UILocalizedIndexedCollation.currentCollation().sectionIndexTitles[section]
+    }
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        let currentCollation = UILocalizedIndexedCollation.currentCollation() as UILocalizedIndexedCollation
+        return currentCollation.sectionIndexTitles
+    }
+    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
+        let currentCollation = UILocalizedIndexedCollation.currentCollation() as UILocalizedIndexedCollation
+        return currentCollation.sectionForSectionIndexTitleAtIndex(index)
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let section = bugSections[indexPath.section]
-            section.bugs.removeAtIndex(indexPath.row)
+            var section = allSections[indexPath.section]!
+            section.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
-        if editingStyle == .Insert {
-            let bugSection = bugSections[indexPath.section]
-            let newBug = ScaryBug(withName: "New Bug", imageName: nil, howScary: bugSection.howScary)
-            bugSection.bugs.append(newBug)
-            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        }
     }
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        let section = bugSections[indexPath.section]
-        if indexPath.row >= section.bugs.count {
-            return .Insert
-        } else {
-            return .Delete
-        }
-    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
-            tableView.beginUpdates()
-            for (index, bugSection) in bugSections.enumerate() {
-                let indexPath = NSIndexPath(forRow: bugSection.bugs.count, inSection: index)
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            }
-            tableView.endUpdates()
             tableView.setEditing(true, animated: true)
         } else {
-            tableView.beginUpdates()
-            for (index, bugSection) in bugSections.enumerate() {
-                let indexPath = NSIndexPath(forRow: bugSection.bugs.count, inSection: index)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            }
-            tableView.endUpdates()
             tableView.setEditing(false, animated: true)
         }
     }
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let section = bugSections[indexPath.section]
-        if section.bugs.count > indexPath.row && editing {
+        let section = allSections[indexPath.section]!
+        if section.count > indexPath.row && editing {
             return nil
         }
         return indexPath
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let section = bugSections[indexPath.section]
-        if section.bugs.count <= indexPath.row && editing {
+        let section = allSections[indexPath.section]!
+        if section.count <= indexPath.row && editing {
             self.tableView(tableView, commitEditingStyle: .Insert, forRowAtIndexPath: indexPath)
         }
     }
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        let bugSection = bugSections[indexPath.section]
-        if bugSection.bugs.count <= indexPath.row && editing {
+        let bugSection = allSections[indexPath.section]!
+        if bugSection.count <= indexPath.row && editing {
             return false
         } else {
             return true
         }
-    }
-    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        
-        let sourceSection = bugSections[sourceIndexPath.section]
-        let bugToMove = sourceSection.bugs[sourceIndexPath.row]
-        
-        let destinationSection = bugSections[destinationIndexPath.section]
-        
-        if sourceIndexPath == destinationIndexPath {
-            //don't move
-            return
-        }
-        if destinationSection == sourceSection {
-            swap(&destinationSection.bugs[destinationIndexPath.row], &sourceSection.bugs[sourceIndexPath.row])
-        } else {
-            bugToMove.howScary = destinationSection.howScary
-            destinationSection.bugs.insert(bugToMove, atIndex: destinationIndexPath.row)
-            sourceSection.bugs.removeAtIndex(sourceIndexPath.row)
-        }
-        //fix the bug when move different section , the row information didn't refresh 
-        let delayInSections: Double = 0.2
-        let dispatchTime =  Int64(delayInSections * Double(NSEC_PER_SEC))
-        let popTime = dispatch_time(DISPATCH_TIME_NOW, dispatchTime)
-        dispatch_after(popTime, dispatch_get_main_queue(), {
-            () -> Void in
-            self.tableView.reloadRowsAtIndexPaths([destinationIndexPath], withRowAnimation: .None)
-        })
-    }
-    //It doesn’t make sense to allow a user to move a row below the Add Bug row
-    override func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
-        let bugSection = bugSections[proposedDestinationIndexPath.section]
-        if proposedDestinationIndexPath.row >= bugSection.bugs.count {
-            return NSIndexPath(forRow: bugSection.bugs.count - 1, inSection: proposedDestinationIndexPath.section)
-        }
-        return proposedDestinationIndexPath
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60.0
@@ -206,8 +155,8 @@ class ScaryBugsTableViewController: UITableViewController {
             print("fsd")
             let controller = segue.destinationViewController as? EditingTableViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let bugSection = bugSections[indexPath.section]
-            controller?.bug = bugSection.bugs[indexPath.row]
+            let bugSection = allSections[indexPath.section]!
+            controller?.bug = bugSection[indexPath.row]
         }
     }
     

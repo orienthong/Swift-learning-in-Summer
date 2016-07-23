@@ -17,7 +17,7 @@ enum ScaryFactor: Int {
   case TotalBugs
 }
 
-class ScaryBug {
+class ScaryBug: NSObject, Comparable {
   
   var name: String
   var image: UIImage?
@@ -80,4 +80,8 @@ class ScaryBug {
     return bugs
   }
   
+    
+}
+func < (lhs: ScaryBug, rhs: ScaryBug) -> Bool{
+    return lhs.name < rhs.name
 }
