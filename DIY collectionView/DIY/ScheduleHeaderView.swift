@@ -30,8 +30,10 @@ class ScheduleHeaderView: UICollectionReusableView {
         let height = CGRectGetHeight(attributes.frame)
         if previousHeight != height {
         backgroundImageViewConstraint.constant = backgroundImageViewHeight - attributes.delaY
-        foregroundImageViewHeightConstraint.constant = foregroundImageViewHeight + attributes.delaY
-            previousHeight = height
+            print(attributes.delaY)
+            if attributes.delaY > 40 {
+                foregroundImageViewHeightConstraint.constant = foregroundImageViewHeight + attributes.delaY
+            }
         }
     }
   

@@ -25,7 +25,7 @@ class CameraRollViewController: UICollectionViewController {
     collectionView!.backgroundColor = UIColor.clearColor()
     
     let width = CGRectGetWidth(collectionView!.bounds) / 2
-    let layout = collectionViewLayout! as UICollectionViewFlowLayout
+    let layout = collectionViewLayout as! UICollectionViewFlowLayout
     layout.itemSize = CGSize(width: width, height: width)
   }
 }
@@ -41,14 +41,14 @@ extension CameraRollViewController {
   }
   
   override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-    let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "AlbumHeader", forIndexPath: indexPath) as AlbumHeader
+    let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "AlbumHeader", forIndexPath: indexPath) as! AlbumHeader
     header.album = albums[indexPath.section]
     return header
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let photo = albums[indexPath.section].photos[indexPath.item]
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath) as PhotoCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PhotoCell", forIndexPath: indexPath) as! PhotoCell
     cell.photo = photo
     return cell
   }

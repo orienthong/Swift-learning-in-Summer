@@ -25,9 +25,9 @@ class Album {
     dateFormatter.locale = NSLocale.currentLocale()
     let calendar = NSCalendar.currentCalendar()
     let today = NSDate()
-    let yesterday = calendar.dateByAddingUnit(.DayCalendarUnit, value: -1, toDate: today, options: nil)!
-    let theDayBeforeYesterday = calendar.dateByAddingUnit(.DayCalendarUnit, value: -2, toDate: today, options: nil)!
-    let theDayBeforeThat = calendar.dateByAddingUnit(.DayCalendarUnit, value: -3, toDate: today, options: nil)!
+    let yesterday = calendar.dateByAddingUnit(.NSDayCalendarUnit, value: -1, toDate: today, options: [])!
+    let theDayBeforeYesterday = calendar.dateByAddingUnit(.NSDayCalendarUnit, value: -2, toDate: today, options: [])!
+    let theDayBeforeThat = calendar.dateByAddingUnit(.NSDayCalendarUnit, value: -3, toDate: today, options: [])!
     let titles = [dateFormatter.stringFromDate(today), dateFormatter.stringFromDate(yesterday), dateFormatter.stringFromDate(theDayBeforeYesterday), dateFormatter.stringFromDate(theDayBeforeThat)]
     var tutorialBackgroundImages = [UIImage]()
     for i in 1...24 {
