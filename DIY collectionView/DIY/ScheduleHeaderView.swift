@@ -12,5 +12,22 @@ class ScheduleHeaderView: UICollectionReusableView {
   
   @IBOutlet private weak var backgroundImageView: UIView!
   @IBOutlet private weak var foregroundImageView: UIView!
+    @IBOutlet private weak var backgroundImageViewConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var foregroundImageViewHeightConstraint: NSLayoutConstraint!
+    
+    private var backgroundImageViewHeight: CGFloat = 0
+    private var foregroundImageViewHeight: CGFloat = 0
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundImageViewHeight = CGRectGetHeight(backgroundImageView.bounds)
+        foregroundImageViewHeight = CGRectGetHeight(foregroundImageView.bounds)
+    }
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.applyLayoutAttributes(layoutAttributes)
+        let attributes = layoutAttributes as! DIYLayoutAttributes
+        backgroundImageViewConstraint.constant = backgroundImageViewHeight - attributes.delaY
+        foregroundImageViewHeightConstraint.constant = foregroundImageViewHeight + attributes.delaY
+    }
   
 }

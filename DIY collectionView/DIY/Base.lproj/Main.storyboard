@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Schedule View Controller-->
@@ -71,27 +72,32 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="2Ky-WL-0oo">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="2Ky-WL-0oo">
+                                    <rect key="frame" x="0.0" y="-210" width="600" height="600"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="2Ky-WL-0oo" secondAttribute="height" multiplier="1:1" id="GQd-O9-63h"/>
+                                        <constraint firstAttribute="height" constant="600" id="hc6-d1-tFJ"/>
+                                    </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dUT-az-QtX">
                                     <rect key="frame" x="240" y="30" width="120" height="120"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="CMx-Yi-RkW"/>
-                                        <constraint firstAttribute="width" constant="120" id="CRy-vA-zal"/>
+                                        <constraint firstAttribute="height" constant="120" id="ffK-DD-Ut6"/>
+                                        <constraint firstAttribute="width" secondItem="dUT-az-QtX" secondAttribute="height" multiplier="1:1" id="liY-8F-9ck"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="centerY" secondItem="dUT-az-QtX" secondAttribute="centerY" id="3qo-Jx-ImM"/>
-                                <constraint firstAttribute="trailing" secondItem="2Ky-WL-0oo" secondAttribute="trailing" id="F3u-xD-4HV"/>
-                                <constraint firstItem="2Ky-WL-0oo" firstAttribute="leading" secondItem="WvH-It-T35" secondAttribute="leading" id="oro-3q-Bl1"/>
-                                <constraint firstAttribute="centerX" secondItem="dUT-az-QtX" secondAttribute="centerX" id="pAd-uG-9Gv"/>
-                                <constraint firstItem="2Ky-WL-0oo" firstAttribute="top" secondItem="WvH-It-T35" secondAttribute="top" id="yjT-XB-rxN"/>
-                                <constraint firstAttribute="bottom" secondItem="2Ky-WL-0oo" secondAttribute="bottom" id="zcB-il-2w4"/>
+                                <constraint firstItem="2Ky-WL-0oo" firstAttribute="centerY" secondItem="WvH-It-T35" secondAttribute="centerY" id="bU1-4G-dSM"/>
+                                <constraint firstItem="dUT-az-QtX" firstAttribute="centerY" secondItem="WvH-It-T35" secondAttribute="centerY" id="byS-gB-jKg"/>
+                                <constraint firstItem="2Ky-WL-0oo" firstAttribute="centerX" secondItem="WvH-It-T35" secondAttribute="centerX" id="rVI-CX-Jgq"/>
+                                <constraint firstItem="dUT-az-QtX" firstAttribute="centerX" secondItem="WvH-It-T35" secondAttribute="centerX" id="uA6-jY-GPW"/>
                             </constraints>
                             <connections>
                                 <outlet property="backgroundImageView" destination="2Ky-WL-0oo" id="9ew-ku-LxO"/>
+                                <outlet property="backgroundImageViewConstraint" destination="hc6-d1-tFJ" id="nEi-kg-k6k"/>
+                                <outlet property="foregroundImageView" destination="dUT-az-QtX" id="UCe-Qc-r66"/>
+                                <outlet property="foregroundImageViewHeightConstraint" destination="ffK-DD-Ut6" id="Xi4-Mf-PvV"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
