@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FD83FBD0-BDC1-43AA-AFA5-278FDD18E9C1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Camera Roll</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D6F3B71905E39EF33E0D95D377190E42C7F92C7D</key>
+		<string>https://github.com/micpringle/Camera-Roll.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Camera Roll.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D6F3B71905E39EF33E0D95D377190E42C7F92C7D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/micpringle/Camera-Roll.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D6F3B71905E39EF33E0D95D377190E42C7F92C7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D6F3B71905E39EF33E0D95D377190E42C7F92C7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Camera%20Roll</string>
+		</dict>
+	</array>
+</dict>
+</plist>

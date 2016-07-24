@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aL1-8I-XrW">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Roll View Controller-->
+        <scene sceneID="W3H-Bv-fLF">
+            <objects>
+                <collectionViewController id="aL1-8I-XrW" customClass="CameraRollViewController" customModule="Camera_Roll" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="pg2-3u-oer">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="SUl-NJ-8G0">
+                            <size key="itemSize" width="200" height="200"/>
+                            <size key="headerReferenceSize" width="50" height="40"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="iHt-8F-xig" customClass="PhotoCell" customModule="Camera_Roll" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PAg-AL-x5F">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="PAg-AL-x5F" firstAttribute="top" secondItem="iHt-8F-xig" secondAttribute="top" id="WKb-RC-oHa"/>
+                                    <constraint firstAttribute="trailing" secondItem="PAg-AL-x5F" secondAttribute="trailing" id="YFG-14-RPH"/>
+                                    <constraint firstItem="PAg-AL-x5F" firstAttribute="leading" secondItem="iHt-8F-xig" secondAttribute="leading" id="gtE-gQ-OgS"/>
+                                    <constraint firstAttribute="bottom" secondItem="PAg-AL-x5F" secondAttribute="bottom" id="tU3-NM-WVq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="PAg-AL-x5F" id="sUn-gM-OFW"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumHeader" id="WWX-Bv-xyH" customClass="AlbumHeader" customModule="Camera_Roll" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cx-NM-TmC">
+                                    <rect key="frame" x="15" y="8" width="577" height="24"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.42745098469999998" blue="0.2156862766" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="4Cx-NM-TmC" firstAttribute="leading" secondItem="WWX-Bv-xyH" secondAttribute="leading" constant="15" id="e6v-si-h3c"/>
+                                <constraint firstAttribute="trailing" secondItem="4Cx-NM-TmC" secondAttribute="trailing" constant="8" id="hD8-4I-gUF"/>
+                                <constraint firstItem="4Cx-NM-TmC" firstAttribute="top" secondItem="WWX-Bv-xyH" secondAttribute="top" constant="8" id="qY1-oN-wDl"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleLabel" destination="4Cx-NM-TmC" id="jFa-IN-IWN"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="aL1-8I-XrW" id="LNz-0H-7jT"/>
+                            <outlet property="delegate" destination="aL1-8I-XrW" id="Htm-ZR-5p3"/>
+                        </connections>
+                    </collectionView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiu-SE-tMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="420"/>
+        </scene>
+    </scenes>
+</document>
