@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PhotoStreamViewController: UICollectionViewController {
   
@@ -41,18 +42,27 @@ extension PhotoStreamViewController {
   }
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as UICollectionViewCell
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
+    cell.photo = photos[indexPath.item]
+    
     return cell
   }
   
 }
 
 extension PhotoStreamViewController: PinterestLayoutDelegate {
-    func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath heightForItemAtIndexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
-        let random = arc4random_uniform(4) + 1
-        return CGFloat(random * 100)
+    func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
+        let photo = photos[indexPath.item]
+        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+        let ract = AVMakeRectWithAspectRatioInsideRect(photo.image.size, boundingRect)
+        return ract.height
+        
     }
-    func collectionView(collectionView: UICollectionView, heightForAnnonationAtIndexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
-        return 60
+    func collectionView(collectionView: UICollectionView, heightForAnnonationAtIndexPath indexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
+        let photo = photos[indexPath.item]
+        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+        let commentHeight = photo.heightForComment(font, width: width)
+        let height = 4 + 17 + 4 + commentHeight + 4
+        return height
     }
 }
