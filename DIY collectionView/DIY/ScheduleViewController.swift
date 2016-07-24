@@ -19,10 +19,11 @@ class ScheduleViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let width = CGRectGetWidth(collectionView!.bounds)
-    let layout = collectionViewLayout as! UICollectionViewFlowLayout
+    let layout = collectionViewLayout as! DIYLayout
     layout.headerReferenceSize = CGSize(width: width, height: 180)
 //    collectionView!.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     layout.itemSize = CGSize(width: width, height: 62)
+    layout.maxScrollHeight = width / 1.3
   }
   
 }

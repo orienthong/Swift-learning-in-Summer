@@ -28,6 +28,8 @@ class DIYLayoutAttributes: UICollectionViewLayoutAttributes {
 
 class DIYLayout: UICollectionViewFlowLayout {
     
+    var maxScrollHeight: CGFloat = 0
+    
     override class func layoutAttributesClass() -> AnyClass {
         return DIYLayoutAttributes.self
     }
@@ -46,7 +48,7 @@ class DIYLayout: UICollectionViewFlowLayout {
                 if let elementKind = attributes.representedElementKind {
                     if elementKind == UICollectionElementKindSectionHeader {
                         var frame = attributes.frame
-                        frame.size.height = max(minY, headerReferenceSize.height + deltaY)
+                        frame.size.height = min(max(minY, headerReferenceSize.height + deltaY),maxScrollHeight)
                         frame.origin.y = CGRectGetMinY(frame) - deltaY
                         attributes.frame = frame
                         attributes.delaY = deltaY
