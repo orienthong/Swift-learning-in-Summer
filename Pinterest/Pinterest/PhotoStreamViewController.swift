@@ -10,22 +10,7 @@ import UIKit
 
 class PhotoStreamViewController: UICollectionViewController {
   
-  var colors: [UIColor] {
-    get {
-      var colors = [UIColor]()
-      let palette = [UIColor.redColor(), UIColor.greenColor(), UIColor.blueColor(), UIColor.orangeColor(), UIColor.purpleColor(), UIColor.yellowColor()]
-      var paletteIndex = 0
-      for _ in 0..<photos.count {
-        colors.append(palette[paletteIndex])
-        if paletteIndex == palette.count - 1 {
-            paletteIndex = 0
-        } else {
-            paletteIndex += 1
-        }
-      }
-      return colors
-    }
-  }
+  
   var photos = Photo.allPhotos()
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -41,7 +26,6 @@ class PhotoStreamViewController: UICollectionViewController {
     
     collectionView!.backgroundColor = UIColor.clearColor()
     collectionView?.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-//    let size = CGRectGetWidth(collectionView!.bounds) / 2
     let layout = collectionViewLayout as! PinterestLayout
     layout.delegate = self
     layout.numberOfColumns = 2
@@ -49,7 +33,7 @@ class PhotoStreamViewController: UICollectionViewController {
   }
   
 }
-
+//MARK: - dataSource
 extension PhotoStreamViewController {
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,15 +42,17 @@ extension PhotoStreamViewController {
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as UICollectionViewCell
-    cell.contentView.backgroundColor = colors[indexPath.item]
     return cell
   }
   
 }
 
 extension PhotoStreamViewController: PinterestLayoutDelegate {
-    func collectionView(collectionView: UICollectionView, heightForItemAtIndexPath: NSIndexPath) -> CGFloat {
+    func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath heightForItemAtIndexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
         let random = arc4random_uniform(4) + 1
         return CGFloat(random * 100)
+    }
+    func collectionView(collectionView: UICollectionView, heightForAnnonationAtIndexPath: NSIndexPath,withWidth width: CGFloat) -> CGFloat {
+        return 60
     }
 }
