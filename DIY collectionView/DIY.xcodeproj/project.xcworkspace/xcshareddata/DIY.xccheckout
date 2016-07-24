@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>37B882DD-B448-484A-8F52-9089C091FDC5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DIY</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F133AB7D989E96D70BBAB022E02C1FE4800D21B2</key>
+		<string>https://github.com/micpringle/DIY.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DIY.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F133AB7D989E96D70BBAB022E02C1FE4800D21B2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/micpringle/DIY.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F133AB7D989E96D70BBAB022E02C1FE4800D21B2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F133AB7D989E96D70BBAB022E02C1FE4800D21B2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DIY</string>
+		</dict>
+	</array>
+</dict>
+</plist>
