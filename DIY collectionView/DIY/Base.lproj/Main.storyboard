@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BGE-aQ-Usl">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BGE-aQ-Usl" customClass="DIYLayout" customModule="DIY" customModuleProvider="target">
                             <size key="itemSize" width="250" height="62"/>
                             <size key="headerReferenceSize" width="50" height="180"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
