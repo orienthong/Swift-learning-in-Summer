@@ -9,7 +9,7 @@
         <!--finder-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="IntroductionViewController" title="finder" id="9pv-A4-QxB" customClass="IntroductionViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroductionViewController" title="finder" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="IntroductionViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -106,7 +106,7 @@
         <!--Pet Details View Controller-->
         <scene sceneID="55h-Eb-Aha">
             <objects>
-                <viewController storyboardIdentifier="PetDetailsViewController" id="i4g-3H-vDa" customClass="PetDetailsViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i4g-3H-vDa" customClass="PetDetailsViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWE-Vd-Fgh"/>
                         <viewControllerLayoutGuide type="bottom" id="p0b-70-m9x"/>
@@ -164,7 +164,7 @@
         <!--Matched Pets Collection View Controller-->
         <scene sceneID="JPJ-y3-KMa">
             <objects>
-                <collectionViewController storyboardIdentifier="MatchedPetsCollectionViewController" id="bk8-Zf-XFX" customClass="MatchedPetsCollectionViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="MatchedPetsCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bk8-Zf-XFX" customClass="MatchedPetsCollectionViewController" customModule="PetFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="292-H3-Voi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="RootTabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RootTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -232,7 +232,7 @@
         <!--Matches-->
         <scene sceneID="WwD-om-TOl">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="cWA-Lq-Rbb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cWA-Lq-Rbb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Matches" image="matched" selectedImage="matched" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

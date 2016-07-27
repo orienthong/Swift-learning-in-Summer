@@ -55,4 +55,19 @@ class PetDetailsViewController: UIViewController {
     nameAgeLabel.text = "\(currentPet.name), \(currentPet.age)"
     profilePictureImageView.image = UIImage(data: currentPet.imageData)
   }
+    
+    override func encodeRestorableStateWithCoder(coder: NSCoder) {
+        if let petId = petId {
+            coder.encodeInteger(petId, forKey: "petId")
+        }
+        super.encodeRestorableStateWithCoder(coder)
+    }
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        petId = coder.decodeIntegerForKey("petId")
+        super.decodeRestorableStateWithCoder(coder)
+    }
+    override func applicationFinishedRestoringState() {
+        guard let petId = petId else { return }
+        currentPet = MatchedPetsManager.sharedManager.petForId(petId)
+    }
 }

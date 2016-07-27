@@ -64,6 +64,8 @@ class PetEditViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    restorationIdentifier = "PerEditViewController"
+    restorationClass = PetEditViewController.self
     
     view.backgroundColor = UIColor.whiteColor()
     
@@ -74,6 +76,8 @@ class PetEditViewController: UIViewController {
     
     nameTextField.borderStyle = .RoundedRect
     ageTextField.borderStyle = .RoundedRect
+    nameTextField.delegate = self
+    ageTextField.delegate = self
     
     nameTextField.placeholder = "Name"
     ageTextField.placeholder = "Age"
@@ -136,4 +140,16 @@ class PetEditViewController: UIViewController {
     
     super.decodeRestorableStateWithCoder(coder)
   }
+}
+extension PetEditViewController: UIViewControllerRestoration {
+    static func viewControllerWithRestorationIdentifierPath(identifierComponents: [AnyObject], coder: NSCoder) -> UIViewController? {
+        let vc = PetEditViewController()
+        return vc
+    }
+}
+extension PetEditViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
