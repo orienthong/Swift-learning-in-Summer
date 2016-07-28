@@ -28,6 +28,9 @@ class CardViewController: UIViewController {
   
   @IBOutlet private weak var cardView: UIView!
   @IBOutlet private weak var titleLabel: UILabel!
+  private let flipPresentAnimationController = FlipPresentAnimationController()
+  private let flipdisMissAnimationController = FlipDismissAniamtionController()
+  private let swipeInteractionController = SwipeInteractionController()
   
   var pageIndex: Int?
   var petCard: PetCard?
@@ -45,10 +48,26 @@ class CardViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == revealSequeId, let destinationViewController = segue.destinationViewController as? RevealViewController {
       destinationViewController.petCard = petCard
+        destinationViewController.transitioningDelegate = self
+        swipeInteractionController.wireToViewController(destinationViewController)
     }
   }
   
   func handleTap() {
     performSegueWithIdentifier(revealSequeId, sender: nil)
   }
+}
+
+extension CardViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        flipPresentAnimationController.originFrame = cardView.frame
+        return flipPresentAnimationController
+    }
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        flipdisMissAnimationController.destinationFrame = cardView.frame
+        return flipdisMissAnimationController
+    }
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return swipeInteractionController.interctionInProgress ? swipeInteractionController : nil
+    }
 }
