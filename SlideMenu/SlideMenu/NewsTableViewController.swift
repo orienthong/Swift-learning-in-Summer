@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class NewsTableViewController: UITableViewController, MenuTransitionManagerDelegate {
     
     let somehing = 1
@@ -90,6 +91,6 @@ class NewsTableViewController: UITableViewController, MenuTransitionManagerDeleg
         menuTableViewController.transitioningDelegate = menuTransitionManager
         menuTransitionManager.delegate = self
     }
-
-
+    
+    
 }

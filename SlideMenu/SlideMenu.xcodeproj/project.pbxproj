@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F40640EC1BD4E5D0008521E8 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40640EB1BD4E5D0008521E8 /* MenuTransitionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		A93F547C1D4ADDE900095D8F /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F547B1D4ADDE900095D8F /* SwipeInteractionController.swift */; };
+		A94562641D49A707003AD759 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94562631D49A707003AD759 /* MenuHelper.swift */; };
+		A94562661D49A941003AD759 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94562651D49A941003AD759 /* Interactor.swift */; };
+		F40640EC1BD4E5D0008521E8 /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40640EB1BD4E5D0008521E8 /* MenuTransitionManager.swift */; };
 		F456196C1A8871DA00836A98 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456196B1A8871DA00836A98 /* MenuTableViewController.swift */; };
 		F456196E1A8872A800836A98 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456196D1A8872A800836A98 /* MenuTableViewCell.swift */; };
 		F4C1CF081A84F64E00728CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C1CF071A84F64E00728CAD /* AppDelegate.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A93F547B1D4ADDE900095D8F /* SwipeInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
+		A94562631D49A707003AD759 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
+		A94562651D49A941003AD759 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		F40640EB1BD4E5D0008521E8 /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
 		F456196B1A8871DA00836A98 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		F456196D1A8872A800836A98 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +101,9 @@
 				F456196B1A8871DA00836A98 /* MenuTableViewController.swift */,
 				F456196D1A8872A800836A98 /* MenuTableViewCell.swift */,
 				F40640EB1BD4E5D0008521E8 /* MenuTransitionManager.swift */,
+				A94562631D49A707003AD759 /* MenuHelper.swift */,
+				A94562651D49A941003AD759 /* Interactor.swift */,
+				A93F547B1D4ADDE900095D8F /* SwipeInteractionController.swift */,
 			);
 			path = SlideMenu;
 			sourceTree = "<group>";
@@ -225,12 +234,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93F547C1D4ADDE900095D8F /* SwipeInteractionController.swift in Sources */,
 				F4C1CF281A85B3C600728CAD /* NewsTableViewController.swift in Sources */,
 				F40640EC1BD4E5D0008521E8 /* MenuTransitionManager.swift in Sources */,
 				F456196E1A8872A800836A98 /* MenuTableViewCell.swift in Sources */,
 				F456196C1A8871DA00836A98 /* MenuTableViewController.swift in Sources */,
 				F4C1CF081A84F64E00728CAD /* AppDelegate.swift in Sources */,
 				F4C1CF2A1A85B99500728CAD /* NewsTableViewCell.swift in Sources */,
+				A94562661D49A941003AD759 /* Interactor.swift in Sources */,
+				A94562641D49A707003AD759 /* MenuHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

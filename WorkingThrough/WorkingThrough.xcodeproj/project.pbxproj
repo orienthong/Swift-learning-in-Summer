@@ -12,6 +12,8 @@
 		A9C4B15E1D48AC6700D2197D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C4B15C1D48AC6700D2197D /* Main.storyboard */; };
 		A9C4B1601D48AC6700D2197D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C4B15F1D48AC6700D2197D /* Assets.xcassets */; };
 		A9C4B1631D48AC6700D2197D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C4B1611D48AC6700D2197D /* LaunchScreen.storyboard */; };
+		A9C4B16C1D48AD1300D2197D /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4B16A1D48AD1300D2197D /* BWWalkthroughPageViewController.swift */; };
+		A9C4B16D1D48AD1300D2197D /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4B16B1D48AD1300D2197D /* BWWalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A9C4B15F1D48AC6700D2197D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C4B1621D48AC6700D2197D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C4B1641D48AC6700D2197D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C4B16A1D48AD1300D2197D /* BWWalkthroughPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		A9C4B16B1D48AD1300D2197D /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				A9C4B15F1D48AC6700D2197D /* Assets.xcassets */,
 				A9C4B1611D48AC6700D2197D /* LaunchScreen.storyboard */,
 				A9C4B1641D48AC6700D2197D /* Info.plist */,
+				A9C4B16A1D48AD1300D2197D /* BWWalkthroughPageViewController.swift */,
+				A9C4B16B1D48AD1300D2197D /* BWWalkthroughViewController.swift */,
 			);
 			path = WorkingThrough;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C4B16D1D48AD1300D2197D /* BWWalkthroughViewController.swift in Sources */,
+				A9C4B16C1D48AD1300D2197D /* BWWalkthroughPageViewController.swift in Sources */,
 				A9C4B15B1D48AC6700D2197D /* ViewController.swift in Sources */,
 				A9C4B1591D48AC6700D2197D /* AppDelegate.swift in Sources */,
 			);
