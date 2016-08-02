@@ -48,11 +48,14 @@ class MasterViewController: UIViewController {
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    
+    /*
     // add the tap gesture recognizer
     let tap = UITapGestureRecognizer(target: self, action: Selector("didTap"))
     view.addGestureRecognizer(tap)
-    
+    */
+    //We are going to add slide gesture
+    let pan = UIPanGestureRecognizer(target: self, action: #selector(MasterViewController.didPan(_:)))
+    view.addGestureRecognizer(pan)
     // add the logo to the view
     logo.position = CGPoint(x: view.layer.bounds.size.width/2,
       y: view.layer.bounds.size.height/2 + 30)
@@ -63,14 +66,32 @@ class MasterViewController: UIViewController {
   //
   // MARK: Gesture recognizer handler
   //
+    /*
   func didTap() {
     performSegueWithIdentifier("details", sender: nil)
   }
+ */
+    func didPan(recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .Began:
+            transition.interactive = true
+            performSegueWithIdentifier("details", sender: nil)
+        
+        default:
+            transition.handlePan(recognizer)
+        }
+    }
   
 }
 extension MasterViewController: UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.operation = operation
+        return transition
+    }
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if !transition.interactive {
+            return nil
+        }
         return transition
     }
 }

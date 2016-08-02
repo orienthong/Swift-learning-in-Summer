@@ -26,7 +26,7 @@ import QuartzCore
 class DetailViewController: UITableViewController, UINavigationControllerDelegate {
   
   let maskLayer: CAShapeLayer = RWLogoLayer.logoLayer()
-  
+    weak var animator: RevealAnimator?
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -36,10 +36,19 @@ class DetailViewController: UITableViewController, UINavigationControllerDelegat
     maskLayer.position = CGPoint(x: view!.layer.bounds.size.width / 2, y: view.layer.bounds.size.height / 2)
     view.layer.mask = maskLayer
   }
+    
+    
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     view.layer.mask = nil
+    
+    if let masterVC = navigationController?.viewControllers.first as? MasterViewController {
+        animator = masterVC.transition
+    }
+    let panGesture = UIPanGestureRecognizer(target: self, action: Selector("didPan:"))
+    view.addGestureRecognizer(panGesture)
+    
   }
   
   // MARK: Table View methods
@@ -65,4 +74,15 @@ class DetailViewController: UITableViewController, UINavigationControllerDelegat
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
+    func didPan(recognizer: UIPanGestureRecognizer) {
+        if let animator = animator {
+            switch recognizer.state {
+            case .Began:
+                animator.interactive = true
+                navigationController!.popViewControllerAnimated(true)
+            default:
+                animator.handlePan(recognizer)
+            }
+        }
+    }
 }

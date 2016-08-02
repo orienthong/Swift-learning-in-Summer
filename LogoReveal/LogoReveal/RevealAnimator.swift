@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RevealAnimator: NSObject,UIViewControllerAnimatedTransitioning {
+class RevealAnimator: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning {
     let animationDuration = 1.0
     weak var storedContext: UIViewControllerContextTransitioning?
     
@@ -18,8 +18,8 @@ class RevealAnimator: NSObject,UIViewControllerAnimatedTransitioning {
         return animationDuration
     }
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        storedContext = transitionContext
         if operation == .Push {
-            storedContext = transitionContext
         let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! MasterViewController
         let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! DetailViewController
         toVC.view.alpha = 0.0
@@ -61,5 +61,28 @@ class RevealAnimator: NSObject,UIViewControllerAnimatedTransitioning {
             fromVC.logo.removeAllAnimations()
         }
         storedContext = nil
+    }
+    var interactive = false
+    func handlePan(recognizer: UIPanGestureRecognizer) {
+            let translation = recognizer.translationInView(recognizer.view!.superview!)
+            var progress: CGFloat = abs(translation.x / 200.0)
+            progress = min(max(progress, 0.01), 0.99)
+            switch recognizer.state {
+            case .Changed:
+                updateInteractiveTransition(progress)
+            case .Cancelled, .Ended:
+                let transitionLayer = storedContext!.containerView()!.layer
+                transitionLayer.beginTime = CACurrentMediaTime()
+                if progress < 0.5 {
+                    completionSpeed = -1.0
+                    cancelInteractiveTransition()
+                } else {
+                    completionSpeed = 1.0
+                    finishInteractiveTransition()
+                }
+                interactive = false
+            default :
+                break
+            }
     }
 }
