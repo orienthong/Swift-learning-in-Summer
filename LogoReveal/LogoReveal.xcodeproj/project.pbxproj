@@ -14,6 +14,7 @@
 		9C967C671A4F1B6C00A588A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C967C661A4F1B6C00A588A2 /* Images.xcassets */; };
 		9C967C6A1A4F1B6C00A588A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C967C681A4F1B6C00A588A2 /* LaunchScreen.xib */; };
 		9C967C821A4F1F6100A588A2 /* RWLogoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C967C801A4F1F6100A588A2 /* RWLogoLayer.swift */; };
+		A943225E1D50744C005D6BA6 /* RevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943225D1D50744C005D6BA6 /* RevealAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9C967C661A4F1B6C00A588A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9C967C691A4F1B6C00A588A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9C967C801A4F1F6100A588A2 /* RWLogoLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWLogoLayer.swift; sourceTree = "<group>"; };
+		A943225D1D50744C005D6BA6 /* RevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				9C967C5F1A4F1B6C00A588A2 /* MasterViewController.swift */,
 				9C967C611A4F1B6C00A588A2 /* DetailViewController.swift */,
+				A943225D1D50744C005D6BA6 /* RevealAnimator.swift */,
 				9C967C801A4F1F6100A588A2 /* RWLogoLayer.swift */,
 				9C967C5D1A4F1B6C00A588A2 /* AppDelegate.swift */,
 				9C967C631A4F1B6C00A588A2 /* Main.storyboard */,
@@ -153,6 +156,7 @@
 				9C967C621A4F1B6C00A588A2 /* DetailViewController.swift in Sources */,
 				9C967C601A4F1B6C00A588A2 /* MasterViewController.swift in Sources */,
 				9C967C5E1A4F1B6C00A588A2 /* AppDelegate.swift in Sources */,
+				A943225E1D50744C005D6BA6 /* RevealAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

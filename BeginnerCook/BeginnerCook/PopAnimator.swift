@@ -62,6 +62,7 @@ class PopAnimator: NSObject,UIViewControllerAnimatedTransitioning {
         let round = CABasicAnimation(keyPath: "cornerRadius")
         round.fromValue = !presenting ? 0.0 : 20.0 / xScaleFactor
         round.toValue = presenting ? 0.0 : 20.0 / xScaleFactor
+//        round.delegate = self
         round.duration = duration / 2
         herbView.layer.addAnimation(round, forKey: nil)
         herbView.layer.cornerRadius = presenting ? 0.0 : 20.0 / xScaleFactor
