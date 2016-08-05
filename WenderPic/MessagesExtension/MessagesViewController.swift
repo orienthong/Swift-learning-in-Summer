@@ -42,6 +42,9 @@ class MessagesViewController: MSMessagesAppViewController {
     // This will happen when the extension is about to present UI.
     
     // Use this method to configure the extension and restore previously stored state.
+    
+    presentViewController(forConversation: conversation, withPresentationStyle: presentationStyle)
+    
   }
   
   override func didResignActive(with conversation: MSConversation) {
@@ -84,4 +87,39 @@ class MessagesViewController: MSMessagesAppViewController {
   }
   
 }
+extension MessagesViewController {
+    private func switchTo(viewController controller: UIViewController) {
+        for child in childViewControllers {
+            child.willMove(toParentViewController: .none)
+            child.view.removeFromSuperview()
+            child.removeFromParentViewController()
+        }
+        addChildViewController(controller)
+        
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
+        
+        NSLayoutConstraint.activate([
+            controller.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            controller.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            controller.view.topAnchor.constraint(equalTo: view.topAnchor),
+            controller.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+        
+        controller.didMove(toParentViewController: self)
+    }
+    private func instantiateSummaryViewController(game: WenderPicGame?)
+        -> UIViewController {
+            guard let controller = storyboard?.instantiateViewController(withIdentifier: "summaryVC") as? SummaryViewController else {
+                fatalError("Unable to instantiate a summary view controller")
+            }
+            controller.game = game
+            return controller
+    }
+    private func presentViewController(forConversation conversation: MSConversation, withPresentationStyle style: MSMessagesAppPresentationStyle){
+        let controller = instantiateSummaryViewController(game: nil)
+        switchTo(viewController: controller)
+    }
+}
+
 
