@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A914DB611D53353C0061A523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914DB601D53353C0061A523 /* Assets.xcassets */; };
+		A914DB681D53353D0061A523 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A914DB671D53353D0061A523 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A914DB6D1D53353D0061A523 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A914DB6C1D53353D0061A523 /* Messages.framework */; };
+		A914DB701D53353D0061A523 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914DB6F1D53353D0061A523 /* MessagesViewController.swift */; };
+		A914DB731D53353D0061A523 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A914DB711D53353D0061A523 /* MainInterface.storyboard */; };
+		A914DB751D53353D0061A523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914DB741D53353D0061A523 /* Assets.xcassets */; };
+		A914DB811D533C810061A523 /* CandyStickerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914DB801D533C810061A523 /* CandyStickerBrowserViewController.swift */; };
+		A914DB8C1D533D2E0061A523 /* CandyCane.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB831D533D2E0061A523 /* CandyCane.png */; };
+		A914DB8D1D533D2E0061A523 /* Caramel.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB841D533D2E0061A523 /* Caramel.png */; };
+		A914DB8E1D533D2E0061A523 /* ChocolateBar.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB851D533D2E0061A523 /* ChocolateBar.png */; };
+		A914DB8F1D533D2E0061A523 /* ChocolateChip.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB861D533D2E0061A523 /* ChocolateChip.png */; };
+		A914DB901D533D2E0061A523 /* DarkChocolate.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB871D533D2E0061A523 /* DarkChocolate.png */; };
+		A914DB911D533D2E0061A523 /* GummiBear.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB881D533D2E0061A523 /* GummiBear.png */; };
+		A914DB921D533D2E0061A523 /* JawBreaker.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB891D533D2E0061A523 /* JawBreaker.png */; };
+		A914DB931D533D2E0061A523 /* Lollipop.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB8A1D533D2E0061A523 /* Lollipop.png */; };
+		A914DB941D533D2E0061A523 /* SourCandy.png in Resources */ = {isa = PBXBuildFile; fileRef = A914DB8B1D533D2E0061A523 /* SourCandy.png */; };
+		A914DB961D5441750061A523 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914DB951D5441750061A523 /* SectionHeader.swift */; };
+		A914DB981D5441910061A523 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914DB971D5441910061A523 /* StickerCollectionViewCell.swift */; };
+		A914DB9B1D5441CF0061A523 /* StickerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914DB9A1D5441CF0061A523 /* StickerCollectionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A914DB691D53353D0061A523 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A914DB571D53353C0061A523 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A914DB661D53353D0061A523;
+			remoteInfo = MessagesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A914DB7C1D53353D0061A523 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A914DB681D53353D0061A523 /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A914DB5D1D53353C0061A523 /* Stickerlicious.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stickerlicious.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A914DB601D53353C0061A523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A914DB621D53353C0061A523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A914DB671D53353D0061A523 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A914DB6C1D53353D0061A523 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		A914DB6F1D53353D0061A523 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		A914DB721D53353D0061A523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A914DB741D53353D0061A523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A914DB761D53353D0061A523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A914DB801D533C810061A523 /* CandyStickerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandyStickerBrowserViewController.swift; sourceTree = "<group>"; };
+		A914DB831D533D2E0061A523 /* CandyCane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandyCane.png; sourceTree = "<group>"; };
+		A914DB841D533D2E0061A523 /* Caramel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Caramel.png; sourceTree = "<group>"; };
+		A914DB851D533D2E0061A523 /* ChocolateBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChocolateBar.png; sourceTree = "<group>"; };
+		A914DB861D533D2E0061A523 /* ChocolateChip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChocolateChip.png; sourceTree = "<group>"; };
+		A914DB871D533D2E0061A523 /* DarkChocolate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkChocolate.png; sourceTree = "<group>"; };
+		A914DB881D533D2E0061A523 /* GummiBear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GummiBear.png; sourceTree = "<group>"; };
+		A914DB891D533D2E0061A523 /* JawBreaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JawBreaker.png; sourceTree = "<group>"; };
+		A914DB8A1D533D2E0061A523 /* Lollipop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lollipop.png; sourceTree = "<group>"; };
+		A914DB8B1D533D2E0061A523 /* SourCandy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SourCandy.png; sourceTree = "<group>"; };
+		A914DB951D5441750061A523 /* SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		A914DB971D5441910061A523 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		A914DB9A1D5441CF0061A523 /* StickerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A914DB641D53353D0061A523 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A914DB6D1D53353D0061A523 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A914DB561D53353C0061A523 = {
+			isa = PBXGroup;
+			children = (
+				A914DB5F1D53353C0061A523 /* Stickerlicious */,
+				A914DB6E1D53353D0061A523 /* MessagesExtension */,
+				A914DB6B1D53353D0061A523 /* Frameworks */,
+				A914DB5E1D53353C0061A523 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A914DB5E1D53353C0061A523 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB5D1D53353C0061A523 /* Stickerlicious.app */,
+				A914DB671D53353D0061A523 /* MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A914DB5F1D53353C0061A523 /* Stickerlicious */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB601D53353C0061A523 /* Assets.xcassets */,
+				A914DB621D53353C0061A523 /* Info.plist */,
+			);
+			path = Stickerlicious;
+			sourceTree = "<group>";
+		};
+		A914DB6B1D53353D0061A523 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB6C1D53353D0061A523 /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A914DB6E1D53353D0061A523 /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB821D533D260061A523 /* Candy */,
+				A914DB991D5441B30061A523 /* CollectionView */,
+				A914DB711D53353D0061A523 /* MainInterface.storyboard */,
+				A914DB6F1D53353D0061A523 /* MessagesViewController.swift */,
+				A914DB741D53353D0061A523 /* Assets.xcassets */,
+				A914DB761D53353D0061A523 /* Info.plist */,
+				A914DB801D533C810061A523 /* CandyStickerBrowserViewController.swift */,
+			);
+			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		A914DB821D533D260061A523 /* Candy */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB831D533D2E0061A523 /* CandyCane.png */,
+				A914DB841D533D2E0061A523 /* Caramel.png */,
+				A914DB851D533D2E0061A523 /* ChocolateBar.png */,
+				A914DB861D533D2E0061A523 /* ChocolateChip.png */,
+				A914DB871D533D2E0061A523 /* DarkChocolate.png */,
+				A914DB881D533D2E0061A523 /* GummiBear.png */,
+				A914DB891D533D2E0061A523 /* JawBreaker.png */,
+				A914DB8A1D533D2E0061A523 /* Lollipop.png */,
+				A914DB8B1D533D2E0061A523 /* SourCandy.png */,
+			);
+			name = Candy;
+			sourceTree = "<group>";
+		};
+		A914DB991D5441B30061A523 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A914DB951D5441750061A523 /* SectionHeader.swift */,
+				A914DB971D5441910061A523 /* StickerCollectionViewCell.swift */,
+				A914DB9A1D5441CF0061A523 /* StickerCollectionViewController.swift */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A914DB5C1D53353C0061A523 /* Stickerlicious */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A914DB7D1D53353D0061A523 /* Build configuration list for PBXNativeTarget "Stickerlicious" */;
+			buildPhases = (
+				A914DB5B1D53353C0061A523 /* Resources */,
+				A914DB7C1D53353D0061A523 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A914DB6A1D53353D0061A523 /* PBXTargetDependency */,
+			);
+			name = Stickerlicious;
+			productName = Stickerlicious;
+			productReference = A914DB5D1D53353C0061A523 /* Stickerlicious.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		A914DB661D53353D0061A523 /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A914DB791D53353D0061A523 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				A914DB631D53353D0061A523 /* Sources */,
+				A914DB641D53353D0061A523 /* Frameworks */,
+				A914DB651D53353D0061A523 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = A914DB671D53353D0061A523 /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A914DB571D53353C0061A523 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = scauos.com;
+				TargetAttributes = {
+					A914DB5C1D53353C0061A523 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S85YN963RT;
+						DevelopmentTeamName = "浩东 洪 (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					A914DB661D53353D0061A523 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S85YN963RT;
+						DevelopmentTeamName = "浩东 洪 (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A914DB5A1D53353C0061A523 /* Build configuration list for PBXProject "Stickerlicious" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A914DB561D53353C0061A523;
+			productRefGroup = A914DB5E1D53353C0061A523 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A914DB5C1D53353C0061A523 /* Stickerlicious */,
+				A914DB661D53353D0061A523 /* MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A914DB5B1D53353C0061A523 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A914DB611D53353C0061A523 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A914DB651D53353D0061A523 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A914DB921D533D2E0061A523 /* JawBreaker.png in Resources */,
+				A914DB8E1D533D2E0061A523 /* ChocolateBar.png in Resources */,
+				A914DB931D533D2E0061A523 /* Lollipop.png in Resources */,
+				A914DB911D533D2E0061A523 /* GummiBear.png in Resources */,
+				A914DB751D53353D0061A523 /* Assets.xcassets in Resources */,
+				A914DB901D533D2E0061A523 /* DarkChocolate.png in Resources */,
+				A914DB941D533D2E0061A523 /* SourCandy.png in Resources */,
+				A914DB8C1D533D2E0061A523 /* CandyCane.png in Resources */,
+				A914DB731D53353D0061A523 /* MainInterface.storyboard in Resources */,
+				A914DB8F1D533D2E0061A523 /* ChocolateChip.png in Resources */,
+				A914DB8D1D533D2E0061A523 /* Caramel.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A914DB631D53353D0061A523 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A914DB701D53353D0061A523 /* MessagesViewController.swift in Sources */,
+				A914DB9B1D5441CF0061A523 /* StickerCollectionViewController.swift in Sources */,
+				A914DB811D533C810061A523 /* CandyStickerBrowserViewController.swift in Sources */,
+				A914DB981D5441910061A523 /* StickerCollectionViewCell.swift in Sources */,
+				A914DB961D5441750061A523 /* SectionHeader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A914DB6A1D53353D0061A523 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A914DB661D53353D0061A523 /* MessagesExtension */;
+			targetProxy = A914DB691D53353D0061A523 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A914DB711D53353D0061A523 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A914DB721D53353D0061A523 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A914DB771D53353D0061A523 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A914DB781D53353D0061A523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A914DB7A1D53353D0061A523 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "everyting-is-under-control.Stickerlicious.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A914DB7B1D53353D0061A523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "everyting-is-under-control.Stickerlicious.MessagesExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		A914DB7E1D53353D0061A523 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Stickerlicious/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyting-is-under-control.Stickerlicious";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A914DB7F1D53353D0061A523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Stickerlicious/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "everyting-is-under-control.Stickerlicious";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A914DB5A1D53353C0061A523 /* Build configuration list for PBXProject "Stickerlicious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A914DB771D53353D0061A523 /* Debug */,
+				A914DB781D53353D0061A523 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A914DB791D53353D0061A523 /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A914DB7A1D53353D0061A523 /* Debug */,
+				A914DB7B1D53353D0061A523 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A914DB7D1D53353D0061A523 /* Build configuration list for PBXNativeTarget "Stickerlicious" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A914DB7E1D53353D0061A523 /* Debug */,
+				A914DB7F1D53353D0061A523 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A914DB571D53353C0061A523 /* Project object */;
+}
