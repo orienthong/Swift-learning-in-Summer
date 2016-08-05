@@ -76,8 +76,10 @@ class MessagesViewController: MSMessagesAppViewController {
   
   override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
     // Called before the extension transitions to a new presentation style.
-    
     // Use this method to prepare for the change in presentation style.
+    if let conversation = activeConversation {
+        presentViewController(forConversation: conversation, withPresentationStyle: presentationStyle)
+    }
   }
   
   override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
@@ -117,9 +119,30 @@ extension MessagesViewController {
             return controller
     }
     private func presentViewController(forConversation conversation: MSConversation, withPresentationStyle style: MSMessagesAppPresentationStyle){
-        let controller = instantiateSummaryViewController(game: nil)
+        let controller: UIViewController
+        
+        switch style {
+        case .compact:
+            controller = instantiateSummaryViewController(game: nil)
+        case .expanded:
+            let newGame = WenderPicGame.newGame(drawerId: conversation.localParticipantIdentifier)
+            controller = instantiateDrawingViewController(game: newGame)
+        }
         switchTo(viewController: controller)
+    }
+    private func instantiateDrawingViewController(game: WenderPicGame?)
+        -> UIViewController {
+            guard let controller = storyboard?.instantiateViewController(withIdentifier: "drawingVC") as? DrawingViewController else {
+                fatalError("Unable to instantiate a drawing view controller")
+            }
+            controller.game = game
+            return controller
     }
 }
 
-
+extension MessagesViewController: SummaryViewControllerDelegate {
+    func handleSummaryTap(forGame game: WenderPicGame?) {
+        requestPresentationStyle(.expanded)
+    }
+    
+}
