@@ -155,11 +155,67 @@ class ViewController: UIViewController {
                 return
             }
             
-            // GUARD: Is the "photo " key in our photosDictionary 
+            /* GUARD: Is "pages" key in the photosDictionary? */
+            guard let totalPages = photosDictionary[Constants.FlickrResponseKeys.Pages] as? Int else {
+                displayError("Cannot find key '\(Constants.FlickrResponseKeys.Pages)' in \(photosDictionary)")
+                return
+            }
+            let pageLimit = min(totalPages, 40)
+            let randomPage = Int(arc4random_uniform(UInt32(pageLimit))) + 1
+            
+            self.displayImageFromFlickrBySearch(methodParameters, withPageNumber: randomPage)
+        }
+        task.resume()
+        
+    }
+    private func displayImageFromFlickrBySearch(var methodParameters: [String: AnyObject], withPageNumber : Int) {
+        let session = NSURLSession.sharedSession()
+        let request = NSURLRequest(URL: flickrURLFromParameters(methodParameters))
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            // if an error occurs, print it and re-enable the UI
+            func displayError(error: String) {
+                self.setUIEnabled(true)
+                self.photoTitleLabel.text = "No Photo returned. Try again"
+                self.photoImageView.image = nil
+            }
+            
+            guard error == nil else {
+                displayError("There was an error with your request: \(error)")
+                return
+            }
+            
+            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                displayError("Flickr Api")
+                return
+            }
+            // parse the data
+            let parsedResult: AnyObject!
+            do {
+                parsedResult = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            } catch {
+                displayError("Could not parse the data as JSON: '\(error)'")
+                return
+            }
+            
+            // GUARD: Did Flickr return an erro (stat != ok)?
+            guard let stat = parsedResult[Constants.FlickrResponseKeys.Status] as? String where stat == Constants.FlickrResponseValues.OKStatus else {
+                displayError("Flickr API returned an error. See error code and message in \(parsedResult)")
+                return
+            }
+            
+            // GUARD: Is the "photos" key in our result?
+            guard let photosDictionary = parsedResult[Constants.FlickrResponseKeys.Photos] as? [String: AnyObject] else {
+                displayError("Cannot find key '\(Constants.FlickrResponseKeys.Photos)' in \(parsedResult)")
+                return
+            }
+            
+            // GUARD: Is the "photo " key in our photosDictionary
             guard let photosArrary = photosDictionary[Constants.FlickrResponseKeys.Photo] as? [[String: AnyObject]] else {
                 displayError("Cannot find key '\(Constants.FlickrResponseKeys.Photo)' in \(photosDictionary)")
                 return
             }
+            
             
             if photosArrary.count == 0 {
                 displayError("No Photos Found. Search Again")
@@ -169,7 +225,7 @@ class ViewController: UIViewController {
                 let photoDictionary = photosArrary[randomPhotoIndex] as [String: AnyObject]
                 let photoTitle = photosDictionary[Constants.FlickrResponseKeys.Title] as? String
                 
-                // GUARD: Does our photo have a key for 'url_m'? 
+                // GUARD: Does our photo have a key for 'url_m'?
                 guard let imageUrlString = photoDictionary[Constants.FlickrResponseKeys.MediumURL] as? String else {
                     displayError("Cannot find key '\(Constants.FlickrResponseKeys.MediumURL) in \(photoDictionary)'")
                     return
@@ -186,7 +242,11 @@ class ViewController: UIViewController {
                     displayError("Image does not exist at \(imageURL)")
                 }
             }
+            
+            
         }
+        
+        // start the task
         task.resume()
     }
     
