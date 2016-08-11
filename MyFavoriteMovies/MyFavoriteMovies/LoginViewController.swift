@@ -96,11 +96,51 @@ class LoginViewController: UIViewController {
         /* 2/3. Build the URL, Configure the request */
         let request = NSURLRequest(URL: appDelegate.tmdbURLFromParameters(methodParameters, withPathExtension: "/authentication/token/new"))
         
+        print(request)
+        
         /* 4. Make the request */
         let task = appDelegate.sharedSession.dataTaskWithRequest(request) { (data, response, error) in
             
-            /* 5. Parse the data */
+            func displayError(error: String) {
+                print(error)
+                performUIUpdatesOnMain {
+                    self.setUIEnabled(true)
+                    self.debugTextLabel.text = "Login Failed (Request Token)"
+                }
+            }
+            
+            guard (error == nil) else {
+                displayError("There was an error with your request: \(error)")
+                return
+            }
+            
+            // GUARD: Did we get a successful 2XX response?
+            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                displayError("Your request returned a status code other than 2xx!")
+                return
+            }
+            
+            // GUARD: Was there any data request?
+            guard let data = data else {
+                displayError("No data was returned by the request!")
+                return
+            }
+            
+            let parsedResut: AnyObject!
+            do {
+                parsedResut = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            } catch {
+                displayError("Could not parse the data as JSON: '\(data)'")
+                return
+            }
+            
+            // GUARD: Is the "request_token" key in parsedResult?
+            guard let requestToken = parsedResut[Constants.TMDBParameterKeys.RequestToken] as? String else {
+                displayError("Cannot find key '\(Constants.TMDBParameterKeys.RequestToken)' in \(parsedResut)")
+                return
+            }
             /* 6. Use the data! */
+            print(requestToken)
         }
 
         /* 7. Start the request */
@@ -110,6 +150,7 @@ class LoginViewController: UIViewController {
     private func loginWithToken(requestToken: String) {
         
         /* TASK: Login, then get a session id */
+        
         
         /* 1. Set the parameters */
         /* 2/3. Build the URL, Configure the request */
@@ -123,7 +164,9 @@ class LoginViewController: UIViewController {
         
         /* TASK: Get a session ID, then store it (appDelegate.sessionID) and get the user's id */
         
+        
         /* 1. Set the parameters */
+        
         /* 2/3. Build the URL, Configure the request */
         /* 4. Make the request */
         /* 5. Parse the data */
