@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		037354345D78CD6A0CA50908E0BB8919 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24416D3A3ED4E4E0B0D789E68E7D281 /* PopoverViewController.swift */; };
+		0A0E4C27CBD559E0E13BEF6B12AF8CD1 /* MenuAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C816B262E3427A4F67C3D9F9EFF5E2AB /* MenuAssets.xcassets */; };
+		0EB744422E1FADC84FAF7532B1FBC588 /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9779E52E1F1A6743A91B8993CB650 /* UIImage+Bundle.swift */; };
+		11660BECE39CD0F88FCF52DE7839890E /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4EACBDAE8B6FD6AFD39677D74E30E7 /* Array+Safe.swift */; };
+		13DEBA8E79568DE105C94549A6276D8F /* TabSwitcherMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7AB3A4EB7CE1061979C9076768BF3 /* TabSwitcherMenuItem.swift */; };
+		1EB3974BA61BE563B3366FA0ABD7E731 /* ColorMatchTabs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3CAFC63AD2B3A468E04FF7CC86C0FF /* ColorMatchTabs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A798DDF05B716027860A9FAC2615A4C /* ColorMatchTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6785A07D923C0A92517BD64D172FF7 /* ColorMatchTabsViewController.swift */; };
+		2BCAAE1B5B3126BCC366453CFBDB792E /* Pods-ColorMatchTabs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 664FEE3832FC836B7E2DD8B79A6C4DEE /* Pods-ColorMatchTabs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48754A3AA27DC5C51AD850EF11A24A38 /* ColorTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF75BA88EF154F72121146B5A32A8E /* ColorTabs.swift */; };
+		5EB4E6EB99A88FD859FB1F2066241431 /* ScrollMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F806ECBA9202DE1897D9EC2A0CAB57 /* ScrollMenu.swift */; };
+		7850386434523D632F20E68189B63A88 /* ColorMatchTabs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E67FAFC599FE5A2EF4023872B62EBF /* ColorMatchTabs-dummy.m */; };
+		83E96770010C1F9A20D85950A03D4DF3 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2450B6C8A2B9D6177F34CA95D3488376 /* CircleMenu.swift */; };
+		8960BE893C7A1FA96E47733D5400C1F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		8B6950842A4FDB228F10F8C2533FA49B /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEA8407E4A214464D72C5E9683BCE20 /* CircleTransition.swift */; };
+		983087C515A001604C8BA4107ACFFA8B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C480833237E0A719F4D2082895863538 /* MenuView.swift */; };
+		9F01B16322801AAE4F7051BFC9A755D5 /* VerticalGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D17A3548ECDC6CA19291327489174B /* VerticalGradientView.swift */; };
+		A78C907F94225C9B335D6B1D9F01CBC1 /* CAAnimation+OpacityAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65797A1A3ECB186709B5AF4E8D6C3D2D /* CAAnimation+OpacityAnimation.swift */; };
+		CB2BA1B322701C729D0C418D183118E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E019A06BB5B2EEA8B3458895FDEA2C7F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C63E53CA977D44F556A581CC4348DE /* Constants.swift */; };
+		F7A0D9B7874B09F708490254FA59EDF3 /* ExtendedNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AC3C8A482F36BE90F981400A9DFA23 /* ExtendedNavigationBar.swift */; };
+		FEF669402D5BD61A9C0B836675402EAA /* Pods-ColorMatchTabs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04BB9EF5168DC233D1AC98372430B7 /* Pods-ColorMatchTabs-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4118852ABFFA54F4CBE361A87580EBA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 089CEE93F31022E8F6F3C0FD1DA4C737;
+			remoteInfo = ColorMatchTabs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12F6965267BD42090454A0309AF0A985 /* ColorMatchTabs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ColorMatchTabs.modulemap; sourceTree = "<group>"; };
+		14FDB7C2EC8C33D2727C7CCBC27C8751 /* Pods-ColorMatchTabs-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ColorMatchTabs-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2450B6C8A2B9D6177F34CA95D3488376 /* CircleMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleMenu.swift; path = ColorMatchTabs/Classes/Views/CircleMenu.swift; sourceTree = "<group>"; };
+		2EAB8AF06EA426644975DF3D22BF8CB0 /* ColorMatchTabs-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorMatchTabs-prefix.pch"; sourceTree = "<group>"; };
+		3C04BB9EF5168DC233D1AC98372430B7 /* Pods-ColorMatchTabs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ColorMatchTabs-dummy.m"; sourceTree = "<group>"; };
+		42AA2B22A044C490CD177DBE4162A96D /* Pods-ColorMatchTabs-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ColorMatchTabs-acknowledgements.plist"; sourceTree = "<group>"; };
+		49E9779E52E1F1A6743A91B8993CB650 /* UIImage+Bundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Bundle.swift"; path = "ColorMatchTabs/Classes/Extensions/UIImage+Bundle.swift"; sourceTree = "<group>"; };
+		5AEF75BA88EF154F72121146B5A32A8E /* ColorTabs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorTabs.swift; path = ColorMatchTabs/Classes/Views/ColorTabs.swift; sourceTree = "<group>"; };
+		63D890701BAAB6E7A73424ACA52DAF96 /* ColorMatchTabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ColorMatchTabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65797A1A3ECB186709B5AF4E8D6C3D2D /* CAAnimation+OpacityAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAAnimation+OpacityAnimation.swift"; path = "ColorMatchTabs/Classes/Extensions/CAAnimation+OpacityAnimation.swift"; sourceTree = "<group>"; };
+		664FEE3832FC836B7E2DD8B79A6C4DEE /* Pods-ColorMatchTabs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ColorMatchTabs-umbrella.h"; sourceTree = "<group>"; };
+		67F845B4FC9B39DA3C3ED67C73EA66DB /* Pods_ColorMatchTabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ColorMatchTabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1B009CA6DE45C788E3A86F2E55E366 /* Pods-ColorMatchTabs-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ColorMatchTabs-frameworks.sh"; sourceTree = "<group>"; };
+		77F806ECBA9202DE1897D9EC2A0CAB57 /* ScrollMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScrollMenu.swift; path = ColorMatchTabs/Classes/Views/ScrollMenu.swift; sourceTree = "<group>"; };
+		8A03798DBEFF114B65D025DF979C5D98 /* Pods-ColorMatchTabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ColorMatchTabs.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F3CAFC63AD2B3A468E04FF7CC86C0FF /* ColorMatchTabs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ColorMatchTabs-umbrella.h"; sourceTree = "<group>"; };
+		AAADEC2F75EAB8D6CA16D6116F4BBFF5 /* Pods-ColorMatchTabs-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ColorMatchTabs-resources.sh"; sourceTree = "<group>"; };
+		AAEA8407E4A214464D72C5E9683BCE20 /* CircleTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CircleTransition.swift; path = ColorMatchTabs/Classes/Transition/CircleTransition.swift; sourceTree = "<group>"; };
+		BF4DD22FE8C3F267EF17EAA86CBC7D89 /* Pods-ColorMatchTabs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ColorMatchTabs.modulemap"; sourceTree = "<group>"; };
+		C0C63E53CA977D44F556A581CC4348DE /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ColorMatchTabs/Classes/Constants.swift; sourceTree = "<group>"; };
+		C24416D3A3ED4E4E0B0D789E68E7D281 /* PopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopoverViewController.swift; path = ColorMatchTabs/Classes/ViewController/PopoverViewController.swift; sourceTree = "<group>"; };
+		C455B88CC9F1817F2AF9DB1CAE90E8C0 /* ColorMatchTabs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ColorMatchTabs.xcconfig; sourceTree = "<group>"; };
+		C480833237E0A719F4D2082895863538 /* MenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MenuView.swift; path = ColorMatchTabs/Classes/Views/MenuView.swift; sourceTree = "<group>"; };
+		C496E9E79DD4BB25F2918EBDE2A414D9 /* Pods-ColorMatchTabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ColorMatchTabs.release.xcconfig"; sourceTree = "<group>"; };
+		C816B262E3427A4F67C3D9F9EFF5E2AB /* MenuAssets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = MenuAssets.xcassets; path = ColorMatchTabs/Resources/MenuAssets.xcassets; sourceTree = "<group>"; };
+		C8AC3C8A482F36BE90F981400A9DFA23 /* ExtendedNavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtendedNavigationBar.swift; path = ColorMatchTabs/Classes/Views/ExtendedNavigationBar.swift; sourceTree = "<group>"; };
+		CC4EACBDAE8B6FD6AFD39677D74E30E7 /* Array+Safe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Safe.swift"; path = "ColorMatchTabs/Classes/Extensions/Array+Safe.swift"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D9E2EA8D017453594CCCD9022B49683A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA6785A07D923C0A92517BD64D172FF7 /* ColorMatchTabsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorMatchTabsViewController.swift; path = ColorMatchTabs/Classes/ViewController/ColorMatchTabsViewController.swift; sourceTree = "<group>"; };
+		E42AC45BCC56D9B01F1E7CDA20B44D33 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D17A3548ECDC6CA19291327489174B /* VerticalGradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VerticalGradientView.swift; path = ColorMatchTabs/Classes/Views/VerticalGradientView.swift; sourceTree = "<group>"; };
+		E9E67FAFC599FE5A2EF4023872B62EBF /* ColorMatchTabs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ColorMatchTabs-dummy.m"; sourceTree = "<group>"; };
+		ECA7AB3A4EB7CE1061979C9076768BF3 /* TabSwitcherMenuItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabSwitcherMenuItem.swift; path = ColorMatchTabs/Classes/Models/TabSwitcherMenuItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9443264243466AD2AF8C99782C40EA37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8960BE893C7A1FA96E47733D5400C1F3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7E5289CC9E77A98AE39FEA60AC6B6B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB2BA1B322701C729D0C418D183118E9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04678F1C1876E9FC584085DBE0F1B41A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B77631B12785C0BE78340C705FDDFA1E /* Pods-ColorMatchTabs */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		09DDDE6C7686C0226A360C783F34ACAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D438F8AE448F7C3E6321A8C702C64 /* ColorMatchTabs */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1A6E0CDB30724A00203E5A2A2CA425A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C816B262E3427A4F67C3D9F9EFF5E2AB /* MenuAssets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4A55BFE3FCE14D6F09039B54E7AB305E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				12F6965267BD42090454A0309AF0A985 /* ColorMatchTabs.modulemap */,
+				C455B88CC9F1817F2AF9DB1CAE90E8C0 /* ColorMatchTabs.xcconfig */,
+				E9E67FAFC599FE5A2EF4023872B62EBF /* ColorMatchTabs-dummy.m */,
+				2EAB8AF06EA426644975DF3D22BF8CB0 /* ColorMatchTabs-prefix.pch */,
+				9F3CAFC63AD2B3A468E04FF7CC86C0FF /* ColorMatchTabs-umbrella.h */,
+				E42AC45BCC56D9B01F1E7CDA20B44D33 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ColorMatchTabs";
+			sourceTree = "<group>";
+		};
+		5C4D438F8AE448F7C3E6321A8C702C64 /* ColorMatchTabs */ = {
+			isa = PBXGroup;
+			children = (
+				CC4EACBDAE8B6FD6AFD39677D74E30E7 /* Array+Safe.swift */,
+				65797A1A3ECB186709B5AF4E8D6C3D2D /* CAAnimation+OpacityAnimation.swift */,
+				2450B6C8A2B9D6177F34CA95D3488376 /* CircleMenu.swift */,
+				AAEA8407E4A214464D72C5E9683BCE20 /* CircleTransition.swift */,
+				DA6785A07D923C0A92517BD64D172FF7 /* ColorMatchTabsViewController.swift */,
+				5AEF75BA88EF154F72121146B5A32A8E /* ColorTabs.swift */,
+				C0C63E53CA977D44F556A581CC4348DE /* Constants.swift */,
+				C8AC3C8A482F36BE90F981400A9DFA23 /* ExtendedNavigationBar.swift */,
+				C480833237E0A719F4D2082895863538 /* MenuView.swift */,
+				C24416D3A3ED4E4E0B0D789E68E7D281 /* PopoverViewController.swift */,
+				77F806ECBA9202DE1897D9EC2A0CAB57 /* ScrollMenu.swift */,
+				ECA7AB3A4EB7CE1061979C9076768BF3 /* TabSwitcherMenuItem.swift */,
+				49E9779E52E1F1A6743A91B8993CB650 /* UIImage+Bundle.swift */,
+				E8D17A3548ECDC6CA19291327489174B /* VerticalGradientView.swift */,
+				1A6E0CDB30724A00203E5A2A2CA425A4 /* Resources */,
+				4A55BFE3FCE14D6F09039B54E7AB305E /* Support Files */,
+			);
+			path = ColorMatchTabs;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				09DDDE6C7686C0226A360C783F34ACAD /* Pods */,
+				86318C022ABFE066EA86ABE6897ACD66 /* Products */,
+				04678F1C1876E9FC584085DBE0F1B41A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		86318C022ABFE066EA86ABE6897ACD66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63D890701BAAB6E7A73424ACA52DAF96 /* ColorMatchTabs.framework */,
+				67F845B4FC9B39DA3C3ED67C73EA66DB /* Pods_ColorMatchTabs.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B77631B12785C0BE78340C705FDDFA1E /* Pods-ColorMatchTabs */ = {
+			isa = PBXGroup;
+			children = (
+				D9E2EA8D017453594CCCD9022B49683A /* Info.plist */,
+				BF4DD22FE8C3F267EF17EAA86CBC7D89 /* Pods-ColorMatchTabs.modulemap */,
+				14FDB7C2EC8C33D2727C7CCBC27C8751 /* Pods-ColorMatchTabs-acknowledgements.markdown */,
+				42AA2B22A044C490CD177DBE4162A96D /* Pods-ColorMatchTabs-acknowledgements.plist */,
+				3C04BB9EF5168DC233D1AC98372430B7 /* Pods-ColorMatchTabs-dummy.m */,
+				6D1B009CA6DE45C788E3A86F2E55E366 /* Pods-ColorMatchTabs-frameworks.sh */,
+				AAADEC2F75EAB8D6CA16D6116F4BBFF5 /* Pods-ColorMatchTabs-resources.sh */,
+				664FEE3832FC836B7E2DD8B79A6C4DEE /* Pods-ColorMatchTabs-umbrella.h */,
+				8A03798DBEFF114B65D025DF979C5D98 /* Pods-ColorMatchTabs.debug.xcconfig */,
+				C496E9E79DD4BB25F2918EBDE2A414D9 /* Pods-ColorMatchTabs.release.xcconfig */,
+			);
+			name = "Pods-ColorMatchTabs";
+			path = "Target Support Files/Pods-ColorMatchTabs";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1622FF41763CCDDFE409A765B3A8A52A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB3974BA61BE563B3366FA0ABD7E731 /* ColorMatchTabs-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B567AC0076A1A1CD695782C35AA97BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BCAAE1B5B3126BCC366453CFBDB792E /* Pods-ColorMatchTabs-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		089CEE93F31022E8F6F3C0FD1DA4C737 /* ColorMatchTabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE0D0E7949520B194540C987ED041AAB /* Build configuration list for PBXNativeTarget "ColorMatchTabs" */;
+			buildPhases = (
+				B3ACFC594E422F6431F09ED339C17F61 /* Sources */,
+				9443264243466AD2AF8C99782C40EA37 /* Frameworks */,
+				1CB24878CC107C8BD634D4BC55D74254 /* Resources */,
+				1622FF41763CCDDFE409A765B3A8A52A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorMatchTabs;
+			productName = ColorMatchTabs;
+			productReference = 63D890701BAAB6E7A73424ACA52DAF96 /* ColorMatchTabs.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		347DBF8D39F88113790A0925EBF20F04 /* Pods-ColorMatchTabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13944C4D1D39265075DA37A0A2FA1A76 /* Build configuration list for PBXNativeTarget "Pods-ColorMatchTabs" */;
+			buildPhases = (
+				3043CF728F4C11A4CFB2C180565D0D92 /* Sources */,
+				D7E5289CC9E77A98AE39FEA60AC6B6B4 /* Frameworks */,
+				1B567AC0076A1A1CD695782C35AA97BF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C7F319B3F41FEAB0474E900E5511D87 /* PBXTargetDependency */,
+			);
+			name = "Pods-ColorMatchTabs";
+			productName = "Pods-ColorMatchTabs";
+			productReference = 67F845B4FC9B39DA3C3ED67C73EA66DB /* Pods_ColorMatchTabs.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 86318C022ABFE066EA86ABE6897ACD66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				089CEE93F31022E8F6F3C0FD1DA4C737 /* ColorMatchTabs */,
+				347DBF8D39F88113790A0925EBF20F04 /* Pods-ColorMatchTabs */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CB24878CC107C8BD634D4BC55D74254 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A0E4C27CBD559E0E13BEF6B12AF8CD1 /* MenuAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3043CF728F4C11A4CFB2C180565D0D92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF669402D5BD61A9C0B836675402EAA /* Pods-ColorMatchTabs-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3ACFC594E422F6431F09ED339C17F61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11660BECE39CD0F88FCF52DE7839890E /* Array+Safe.swift in Sources */,
+				A78C907F94225C9B335D6B1D9F01CBC1 /* CAAnimation+OpacityAnimation.swift in Sources */,
+				83E96770010C1F9A20D85950A03D4DF3 /* CircleMenu.swift in Sources */,
+				8B6950842A4FDB228F10F8C2533FA49B /* CircleTransition.swift in Sources */,
+				7850386434523D632F20E68189B63A88 /* ColorMatchTabs-dummy.m in Sources */,
+				2A798DDF05B716027860A9FAC2615A4C /* ColorMatchTabsViewController.swift in Sources */,
+				48754A3AA27DC5C51AD850EF11A24A38 /* ColorTabs.swift in Sources */,
+				E019A06BB5B2EEA8B3458895FDEA2C7F /* Constants.swift in Sources */,
+				F7A0D9B7874B09F708490254FA59EDF3 /* ExtendedNavigationBar.swift in Sources */,
+				983087C515A001604C8BA4107ACFFA8B /* MenuView.swift in Sources */,
+				037354345D78CD6A0CA50908E0BB8919 /* PopoverViewController.swift in Sources */,
+				5EB4E6EB99A88FD859FB1F2066241431 /* ScrollMenu.swift in Sources */,
+				13DEBA8E79568DE105C94549A6276D8F /* TabSwitcherMenuItem.swift in Sources */,
+				0EB744422E1FADC84FAF7532B1FBC588 /* UIImage+Bundle.swift in Sources */,
+				9F01B16322801AAE4F7051BFC9A755D5 /* VerticalGradientView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C7F319B3F41FEAB0474E900E5511D87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ColorMatchTabs;
+			target = 089CEE93F31022E8F6F3C0FD1DA4C737 /* ColorMatchTabs */;
+			targetProxy = 4118852ABFFA54F4CBE361A87580EBA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4718512518819897134DF7BF0305A63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A03798DBEFF114B65D025DF979C5D98 /* Pods-ColorMatchTabs.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ColorMatchTabs/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ColorMatchTabs/Pods-ColorMatchTabs.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ColorMatchTabs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A3CD71BF8418C272E1C19697EC773214 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C455B88CC9F1817F2AF9DB1CAE90E8C0 /* ColorMatchTabs.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ColorMatchTabs/ColorMatchTabs-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ColorMatchTabs/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ColorMatchTabs/ColorMatchTabs.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ColorMatchTabs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC7EC06990841915C2AD24B3B91315A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C496E9E79DD4BB25F2918EBDE2A414D9 /* Pods-ColorMatchTabs.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ColorMatchTabs/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ColorMatchTabs/Pods-ColorMatchTabs.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ColorMatchTabs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E265B31A0E474A921539EA715472BFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C455B88CC9F1817F2AF9DB1CAE90E8C0 /* ColorMatchTabs.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ColorMatchTabs/ColorMatchTabs-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ColorMatchTabs/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ColorMatchTabs/ColorMatchTabs.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ColorMatchTabs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13944C4D1D39265075DA37A0A2FA1A76 /* Build configuration list for PBXNativeTarget "Pods-ColorMatchTabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4718512518819897134DF7BF0305A63F /* Debug */,
+				CC7EC06990841915C2AD24B3B91315A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE0D0E7949520B194540C987ED041AAB /* Build configuration list for PBXNativeTarget "ColorMatchTabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3CD71BF8418C272E1C19697EC773214 /* Debug */,
+				E265B31A0E474A921539EA715472BFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module Pods_ColorMatchTabs {
+  umbrella header "Pods-ColorMatchTabs-umbrella.h"
+
+  export *
+  module * { export * }
+}
