@@ -1,0 +1,20 @@
+PODS:
+  - Reusable (2.4.0):
+    - Reusable/Storyboard (= 2.4.0)
+    - Reusable/View (= 2.4.0)
+  - Reusable/Storyboard (2.4.0)
+  - Reusable/View (2.4.0)
+
+DEPENDENCIES:
+  - Reusable (from `../`)
+
+EXTERNAL SOURCES:
+  Reusable:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Reusable: c23110dd77e6d3cb2ee2197289ef5e21005ba8f0
+
+PODFILE CHECKSUM: 396891106f5d114bc0d21fe52c4957aa880dd013
+
+COCOAPODS: 1.0.1
