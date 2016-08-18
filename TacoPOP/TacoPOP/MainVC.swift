@@ -51,9 +51,9 @@ extension MainVC: UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
 //            cell.configureCell(taco: datasource.tacoArray[indexPath.row])
 //            return cell
 //        }
-        let cell = collectionView.dequeueReusablCell(forIndexPath: indexPath) as? TacoCell
-        cell?.configureCell(taco: datasource.tacoArray[indexPath.row])
-        return cell!
+        let cell = collectionView.dequeueReusablCell(forIndexPath: indexPath) as TacoCell
+        cell.configureCell(taco: datasource.tacoArray[indexPath.row])
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? TacoCell {
