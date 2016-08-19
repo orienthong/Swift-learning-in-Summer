@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="npj-zM-bOi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--PDF View Controller-->
+        <scene sceneID="jpE-XO-wss">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="KbQ-tA-usT" userLabel="PDF View Controller" customClass="PDFViewController" customModule="PennyWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NxI-gH-iZe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mq4-fJ-VZS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whc-mE-3C3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-2k-zr0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.75686274509999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64705882349999999" green="0.75686274509999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pWd-2k-zr0" firstAttribute="top" secondItem="NxI-gH-iZe" secondAttribute="bottom" id="NFf-vv-Aal"/>
+                            <constraint firstAttribute="trailing" secondItem="pWd-2k-zr0" secondAttribute="trailing" id="Sap-gq-YKR"/>
+                            <constraint firstItem="Mq4-fJ-VZS" firstAttribute="top" secondItem="pWd-2k-zr0" secondAttribute="bottom" id="VAX-r5-HMA"/>
+                            <constraint firstItem="pWd-2k-zr0" firstAttribute="leading" secondItem="whc-mE-3C3" secondAttribute="leading" id="lDD-qJ-tcj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PDF Report" id="XKi-Hj-obc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="j2r-5U-SVF">
+                            <connections>
+                                <segue destination="Efd-RI-B29" kind="unwind" unwindAction="cancelToMain:" id="Vrp-gh-LCU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="pWd-2k-zr0" id="PIi-c2-OaH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bY-GC-ESR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Efd-RI-B29" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2094" y="-246"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KPD-zI-yJd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="npj-zM-bOi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GgX-yk-RG6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KbQ-tA-usT" kind="relationship" relationship="rootViewController" id="J7I-nh-9kP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSI-QW-4CM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1374" y="-246"/>
+        </scene>
+    </scenes>
+</document>

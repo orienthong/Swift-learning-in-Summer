@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qLg-WO-BB1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Expense Controller-->
+        <scene sceneID="mvZ-P7-etl">
+            <objects>
+                <viewController id="3dR-WA-A6y" userLabel="Expense Controller" customClass="ExpenseViewController" customModule="PennyWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ed-vS-cXn"/>
+                        <viewControllerLayoutGuide type="bottom" id="1q0-6A-1vq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xs2-G5-5Id">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hi2-FC-Yze" userLabel="BackgroundView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="190"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tz9-4O-LIp">
+                                <rect key="frame" x="171" y="74" width="257" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="OFZ-3V-j4t"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="CUP-ls-jjf" kind="embed" identifier="EmbedCategoryViewController" id="8ih-AQ-2O9"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IXo-Vk-f2w">
+                                <rect key="frame" x="20" y="267" width="560" height="318"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="jpd-mh-lH0" userLabel="Row 1">
+                                        <rect key="frame" x="151" y="0.0" width="258" height="76"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xks-AI-fOc" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Xks-AI-fOc" secondAttribute="height" multiplier="1:1" id="DqK-oc-Jeh"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="zm4-tt-ESx" appends="YES" id="iV3-GV-TcX"/>
+                                                </connections>
+                                            </view>
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EiZ-cc-Zir" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="91" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Cor-iq-hfE" appends="YES" id="ycf-Q7-OZK"/>
+                                                </connections>
+                                            </view>
+                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZT-WS-ZDX" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="182" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="slO-fg-csg" appends="YES" id="UlF-4G-aR1"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VFC-Fg-EnH" userLabel="Row 2">
+                                        <rect key="frame" x="151" y="81" width="258" height="76"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sj-is-rjI" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0sj-is-rjI" secondAttribute="height" multiplier="1:1" id="Wj2-O3-9BM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="mi7-18-ELm" appends="YES" id="frY-Pp-dpJ"/>
+                                                </connections>
+                                            </view>
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZU-ux-3Gl" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="91" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="EiI-Nb-c9n" appends="YES" id="xk6-Sc-6Qf"/>
+                                                </connections>
+                                            </view>
+                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-KR-Kxx" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="182" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="DAL-J5-3B7" appends="YES" id="Fej-xw-Wxf"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wws-6g-CZe" userLabel="Row 3">
+                                        <rect key="frame" x="151" y="162" width="258" height="75"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzE-uJ-Kid" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="75"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gzE-uJ-Kid" secondAttribute="height" multiplier="1:1" id="p0Z-Zu-LrL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="PJy-Vt-IIr" appends="YES" id="kVr-cN-KPt"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-rn-H1B" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="91" y="0.0" width="76" height="75"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="1Re-D9-wjn" appends="YES" id="bdc-RI-TQ9"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KJ-cY-IlU" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="182" y="0.0" width="76" height="75"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Tcp-ra-tdg" appends="YES" id="6bK-mR-doZ"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="G4m-lh-V4t" userLabel="Row 4">
+                                        <rect key="frame" x="151" y="242" width="258" height="76"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swP-Pa-0uQ" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="swP-Pa-0uQ" secondAttribute="height" multiplier="1:1" id="KAj-EU-NjM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="4rA-fg-mlP" appends="YES" id="fdo-MA-I7f"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uD4-Zk-70m" userLabel="Decimal" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="91" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="JRE-1f-eNw" appends="YES" id="g9X-cm-1c3"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYr-Gl-Job" userLabel="Backspace" customClass="NumberView" customModule="PennyWise" customModuleProvider="target">
+                                                <rect key="frame" x="182" y="0.0" width="76" height="76"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.78431372549019607" green="0.85098039215686272" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.30980392156862746" green="0.36078431372549019" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="h4v-z3-w5e" appends="YES" id="lQc-0R-Mae"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWs-bd-eAq" userLabel="ResultBar">
+                                <rect key="frame" x="0.0" y="254" width="600" height="3"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckZ-QZ-spe">
+                                        <rect key="frame" x="450" y="0.0" width="150" height="3"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="DONE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled" title="DONE">
+                                            <color key="titleColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDone:" destination="3dR-WA-A6y" eventType="touchUpInside" id="E4V-c6-oyt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="zK7-HL-ylc">
+                                        <rect key="frame" x="171" y="0.0" width="429" height="3"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJd-4y-RrH" userLabel="Shadow">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
+                                        <color key="backgroundColor" red="0.70980392156862748" green="0.77254901960784317" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="3Y3-8F-LIV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-sz-VgI" userLabel="Highlight">
+                                        <rect key="frame" x="0.0" y="1" width="600" height="2"/>
+                                        <color key="backgroundColor" red="0.7686274509803922" green="0.83921568627450982" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Tza-yl-lQA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.23529411764705882" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ckZ-QZ-spe" secondAttribute="bottom" id="59L-a5-6VA"/>
+                                    <constraint firstAttribute="height" priority="750" constant="50" id="8jg-rl-bNK"/>
+                                    <constraint firstAttribute="trailing" secondItem="iJd-4y-RrH" secondAttribute="trailing" id="OaF-Qq-azE"/>
+                                    <constraint firstItem="iJd-4y-RrH" firstAttribute="leading" secondItem="LWs-bd-eAq" secondAttribute="leading" id="Pne-Og-y38"/>
+                                    <constraint firstItem="zK7-HL-ylc" firstAttribute="trailing" secondItem="ckZ-QZ-spe" secondAttribute="trailing" id="Vrz-rk-oLK"/>
+                                    <constraint firstAttribute="trailing" secondItem="bJ1-sz-VgI" secondAttribute="trailing" id="aP5-UY-ZkJ"/>
+                                    <constraint firstItem="ckZ-QZ-spe" firstAttribute="width" secondItem="LWs-bd-eAq" secondAttribute="width" multiplier="0.25" id="ame-eE-985"/>
+                                    <constraint firstItem="bJ1-sz-VgI" firstAttribute="leading" secondItem="LWs-bd-eAq" secondAttribute="leading" id="bwY-OZ-zWY"/>
+                                    <constraint firstAttribute="bottom" secondItem="bJ1-sz-VgI" secondAttribute="bottom" id="d9j-yk-c3K"/>
+                                    <constraint firstAttribute="trailing" secondItem="ckZ-QZ-spe" secondAttribute="trailing" id="fFl-6J-9yH"/>
+                                    <constraint firstItem="zK7-HL-ylc" firstAttribute="top" secondItem="LWs-bd-eAq" secondAttribute="top" id="jTf-qy-AvT"/>
+                                    <constraint firstItem="ckZ-QZ-spe" firstAttribute="top" secondItem="LWs-bd-eAq" secondAttribute="top" id="m5p-qL-N0f"/>
+                                    <constraint firstAttribute="bottom" secondItem="zK7-HL-ylc" secondAttribute="bottom" id="sQY-bx-bhY"/>
+                                    <constraint firstItem="iJd-4y-RrH" firstAttribute="top" secondItem="LWs-bd-eAq" secondAttribute="top" id="xxM-Du-ce6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.64705882349999999" green="0.75686274509999996" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hi2-FC-Yze" firstAttribute="top" secondItem="2ed-vS-cXn" secondAttribute="bottom" id="1AK-pT-o4V"/>
+                            <constraint firstItem="LWs-bd-eAq" firstAttribute="leading" secondItem="xs2-G5-5Id" secondAttribute="leading" id="1OO-mY-VUF"/>
+                            <constraint firstItem="LWs-bd-eAq" firstAttribute="top" secondItem="tz9-4O-LIp" secondAttribute="bottom" id="2XS-c9-CRX"/>
+                            <constraint firstItem="tz9-4O-LIp" firstAttribute="height" secondItem="xs2-G5-5Id" secondAttribute="height" multiplier="0.3" id="7Yt-EI-SJf"/>
+                            <constraint firstItem="zK7-HL-ylc" firstAttribute="leading" secondItem="jpd-mh-lH0" secondAttribute="leading" id="Iq3-Sk-p0t"/>
+                            <constraint firstItem="Hi2-FC-Yze" firstAttribute="leading" secondItem="xs2-G5-5Id" secondAttribute="leading" id="PNg-dY-6Ib"/>
+                            <constraint firstItem="tz9-4O-LIp" firstAttribute="leading" secondItem="jpd-mh-lH0" secondAttribute="leading" id="Pmu-RO-lqS"/>
+                            <constraint firstItem="IXo-Vk-f2w" firstAttribute="height" secondItem="xs2-G5-5Id" secondAttribute="height" multiplier="0.53" id="QmB-2X-KIG"/>
+                            <constraint firstItem="tz9-4O-LIp" firstAttribute="trailing" secondItem="jpd-mh-lH0" secondAttribute="trailing" constant="-1" id="WqY-VG-yaO"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="IXo-Vk-f2w" secondAttribute="bottom" constant="15" id="Yrv-kh-gHL"/>
+                            <constraint firstItem="tz9-4O-LIp" firstAttribute="top" secondItem="2ed-vS-cXn" secondAttribute="bottom" constant="10" id="ZVh-4j-pnO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IXo-Vk-f2w" secondAttribute="trailing" id="aH2-ik-1A0"/>
+                            <constraint firstItem="Hi2-FC-Yze" firstAttribute="bottom" secondItem="tz9-4O-LIp" secondAttribute="bottom" id="cmB-HP-ANo"/>
+                            <constraint firstItem="IXo-Vk-f2w" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LWs-bd-eAq" secondAttribute="bottom" constant="10" id="fQ2-Qv-iR0"/>
+                            <constraint firstItem="IXo-Vk-f2w" firstAttribute="leading" secondItem="xs2-G5-5Id" secondAttribute="leadingMargin" id="pDY-03-zeN"/>
+                            <constraint firstAttribute="trailing" secondItem="Hi2-FC-Yze" secondAttribute="trailing" id="qdy-1O-gPA"/>
+                            <constraint firstAttribute="trailing" secondItem="LWs-bd-eAq" secondAttribute="trailing" id="zxF-TQ-LKz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Expense" id="X83-jq-gFb">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="WDK-RR-9ol">
+                            <connections>
+                                <segue destination="oJD-w1-GfK" kind="unwind" unwindAction="cancelToMain:" id="egv-DQ-ml1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backspaceView" destination="uYr-Gl-Job" id="Ydf-lh-Eov"/>
+                        <outlet property="btnDone" destination="ckZ-QZ-spe" id="yMH-p6-3Ix"/>
+                        <outlet property="decimalView" destination="uD4-Zk-70m" id="2fb-f8-Dp4"/>
+                        <outlet property="resultLabel" destination="zK7-HL-ylc" id="V7S-14-lQ9"/>
+                        <outletCollection property="numberViews" destination="swP-Pa-0uQ" collectionClass="NSMutableArray" id="Rw8-wf-pXQ"/>
+                        <outletCollection property="numberViews" destination="Xks-AI-fOc" collectionClass="NSMutableArray" id="bcG-pg-RZ8"/>
+                        <outletCollection property="numberViews" destination="EiZ-cc-Zir" collectionClass="NSMutableArray" id="Kow-6T-pLX"/>
+                        <outletCollection property="numberViews" destination="HZT-WS-ZDX" collectionClass="NSMutableArray" id="Pxi-Ef-AO8"/>
+                        <outletCollection property="numberViews" destination="0sj-is-rjI" collectionClass="NSMutableArray" id="o0i-R6-mM3"/>
+                        <outletCollection property="numberViews" destination="wZU-ux-3Gl" collectionClass="NSMutableArray" id="Z0a-qv-eZa"/>
+                        <outletCollection property="numberViews" destination="2Uh-KR-Kxx" collectionClass="NSMutableArray" id="sMr-Rt-yq2"/>
+                        <outletCollection property="numberViews" destination="gzE-uJ-Kid" collectionClass="NSMutableArray" id="L0P-px-0RF"/>
+                        <outletCollection property="numberViews" destination="BZg-rn-H1B" collectionClass="NSMutableArray" id="05k-HO-Q3Z"/>
+                        <outletCollection property="numberViews" destination="6KJ-cY-IlU" collectionClass="NSMutableArray" id="zMF-yS-Cwk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRr-AV-Yfv" sceneMemberID="firstResponder"/>
+                <exit id="oJD-w1-GfK" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="zm4-tt-ESx">
+                    <connections>
+                        <action selector="handleTap:" destination="Xks-AI-fOc" id="tXP-9K-O5M"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Cor-iq-hfE">
+                    <connections>
+                        <action selector="handleTap:" destination="EiZ-cc-Zir" id="aoL-g2-pMl"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="slO-fg-csg">
+                    <connections>
+                        <action selector="handleTap:" destination="HZT-WS-ZDX" id="d7U-FA-tzn"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mi7-18-ELm">
+                    <connections>
+                        <action selector="handleTap:" destination="0sj-is-rjI" id="Zqy-8D-Gde"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EiI-Nb-c9n">
+                    <connections>
+                        <action selector="handleTap:" destination="wZU-ux-3Gl" id="P2E-eP-8ns"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DAL-J5-3B7">
+                    <connections>
+                        <action selector="handleTap:" destination="2Uh-KR-Kxx" id="if9-Zq-J3l"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="PJy-Vt-IIr">
+                    <connections>
+                        <action selector="handleTap:" destination="gzE-uJ-Kid" id="IGX-e2-sfM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1Re-D9-wjn">
+                    <connections>
+                        <action selector="handleTap:" destination="BZg-rn-H1B" id="b76-7R-1fb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Tcp-ra-tdg">
+                    <connections>
+                        <action selector="handleTap:" destination="6KJ-cY-IlU" id="UDn-D9-WSt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="4rA-fg-mlP">
+                    <connections>
+                        <action selector="handleTap:" destination="swP-Pa-0uQ" id="cy2-ha-7OI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JRE-1f-eNw">
+                    <connections>
+                        <action selector="handleTap:" destination="uD4-Zk-70m" id="6Yl-hQ-jtA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="h4v-z3-w5e">
+                    <connections>
+                        <action selector="handleTap:" destination="uYr-Gl-Job" id="gZl-rb-JuN"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1301" y="-657"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="ZQf-jp-8Lo">
+            <objects>
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="CUP-ls-jjf" customClass="CategoryViewController" customModule="PennyWise" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" id="fa5-9r-hfG">
+                        <rect key="frame" x="0.0" y="0.0" width="257" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WJe-Ye-dEe">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="CategoryCell" id="S1z-G9-Djd" customClass="CategoryCell" customModule="PennyWise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iQ6-Qj-Sxh">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iQ6-Qj-Sxh" firstAttribute="leading" secondItem="S1z-G9-Djd" secondAttribute="leading" id="6fd-br-XaK"/>
+                                    <constraint firstAttribute="bottom" secondItem="iQ6-Qj-Sxh" secondAttribute="bottom" id="FIy-oZ-K97"/>
+                                    <constraint firstAttribute="trailing" secondItem="iQ6-Qj-Sxh" secondAttribute="trailing" id="Rta-zC-7CN"/>
+                                    <constraint firstItem="iQ6-Qj-Sxh" firstAttribute="top" secondItem="S1z-G9-Djd" secondAttribute="top" id="vne-zz-JZE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="iQ6-Qj-Sxh" id="DDp-fj-NtK"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="CUP-ls-jjf" id="BGE-7f-DnK"/>
+                            <outlet property="delegate" destination="CUP-ls-jjf" id="WNJ-RS-oJE"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8T-a1-XC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1835" y="-656.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nhr-Bz-Mk0">
+            <objects>
+                <navigationController storyboardIdentifier="ExpenseNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="qLg-WO-BB1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ljw-vz-MPB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3dR-WA-A6y" kind="relationship" relationship="rootViewController" id="d6d-d3-CoK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UiY-eT-lcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="-656"/>
+        </scene>
+    </scenes>
+</document>
