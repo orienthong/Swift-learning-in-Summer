@@ -15,14 +15,17 @@ class GameViewController: UIViewController {
   // 1  ******
   private var shapeViewFactory: ShapeViewFactory!
   private var shapeFactory: ShapeFactory!
+  private var shapeViewBuilder: ShapeViewBuilder!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // 2 ******
+    /* a square
     shapeViewFactory = SquareShapeViewFactory(size: gameView.sizeAvailableForShapes())
     shapeFactory = SquareShapeFactory(minProportion: 0.3, maxProportion: 0.8)
-    
+    */
+    // a circle
     shapeViewFactory = CircleShapeViewFactory(size: gameView.sizeAvailableForShapes())
     shapeFactory = CircleShapeFactory(minProportion: 0.3, maxProportion: 0.8)
     
@@ -35,10 +38,14 @@ class GameViewController: UIViewController {
 
   private func beginNextTurn() {
     
+    shapeViewBuilder = ShapeViewBuilder(shapeViewFactory: shapeViewFactory)
+    shapeViewBuilder.fillColor = UIColor.brownColor()
+    shapeViewBuilder.outlineColor = UIColor.orangeColor()
+    
     let shapes = shapeFactory.creatShapes()
     
     // 3 ******
-    let shapeViews = shapeViewFactory.makeShapeViewsForShapes(shapes)
+    let shapeViews = shapeViewBuilder.buildShapeViewsForShapes(shapes)
     
     shapeViews.0.tapHandler = {
       tappedView in
