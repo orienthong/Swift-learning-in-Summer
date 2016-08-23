@@ -23,6 +23,9 @@ class GameViewController: UIViewController {
     shapeViewFactory = SquareShapeViewFactory(size: gameView.sizeAvailableForShapes())
     shapeFactory = SquareShapeFactory(minProportion: 0.3, maxProportion: 0.8)
     
+    shapeViewFactory = CircleShapeViewFactory(size: gameView.sizeAvailableForShapes())
+    shapeFactory = CircleShapeFactory(minProportion: 0.3, maxProportion: 0.8)
+    
     beginNextTurn()
   }
 
@@ -36,17 +39,15 @@ class GameViewController: UIViewController {
     
     // 3 ******
     let shapeViews = shapeViewFactory.makeShapeViewsForShapes(shapes)
-    let shape1 = shapes.0 as! SquareShape
-    let shape2 = shapes.1 as! SquareShape
     
     shapeViews.0.tapHandler = {
       tappedView in
-      self.gameView.score += shape1.sideLength >= shape2.sideLength ? 1 : -1
+      self.gameView.score += shapes.0.area >= shapes.1.area ? 1 : -1
       self.beginNextTurn()
     }
     shapeViews.1.tapHandler = {
       tappedView in
-      self.gameView.score += shape2.sideLength >= shape1.sideLength ? 1 : -1
+      self.gameView.score += shapes.1.area >= shapes.0.area ? 1 : -1
       self.beginNextTurn()
     }
 

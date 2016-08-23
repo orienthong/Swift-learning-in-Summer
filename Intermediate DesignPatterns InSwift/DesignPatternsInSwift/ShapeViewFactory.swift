@@ -33,3 +33,32 @@ class SquareShapeViewFactory: ShapeViewFactory {
     return (shapeView1, shapeView2)
   }
 }
+class CircleShapeViewFactory: ShapeViewFactory {
+  var size: CGSize
+  
+  init(size: CGSize) {
+    self.size = size
+  }
+  
+  func makeShapeViewsForShapes(shapes: (Shape, Shape)) -> (ShapeView, ShapeView) {
+    let circleShape1 = shapes.0 as! CircleShape
+    // 1
+    let shapeView1 = CircleShapeView(frame: CGRect(
+      x: 0,
+      y: 0,
+      width: circleShape1.diameter * size.width,
+      height: circleShape1.diameter * size.height))
+    shapeView1.shape = circleShape1
+    
+    let circleShape2 = shapes.1 as! CircleShape
+    // 2
+    let shapeView2 = CircleShapeView(frame: CGRect(
+      x: 0,
+      y: 0,
+      width: circleShape2.diameter * size.width,
+      height: circleShape2.diameter * size.height))
+    shapeView2.shape = circleShape2
+    
+    return (shapeView1, shapeView2)
+  }
+}
