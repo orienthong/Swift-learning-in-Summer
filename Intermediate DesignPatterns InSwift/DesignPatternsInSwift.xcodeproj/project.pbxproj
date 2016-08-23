@@ -17,6 +17,8 @@
 		5D23FD2419D223C0003F5F4E /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23FD2319D223C0003F5F4E /* ShapeView.swift */; };
 		5D23FD2619D23F9B003F5F4E /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23FD2519D23F9B003F5F4E /* Shape.swift */; };
 		6A6728FA19EE21B60026F8C9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6728F919EE21B60026F8C9 /* Utils.swift */; };
+		A91578C91D6C3CFF0027E9BE /* ShapeViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */; };
+		A91578CB1D6C43E20027E9BE /* ShapeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		5D23FD2319D223C0003F5F4E /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		5D23FD2519D23F9B003F5F4E /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		6A6728F919EE21B60026F8C9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeViewFactory.swift; sourceTree = "<group>"; };
+		A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				5D23FD2319D223C0003F5F4E /* ShapeView.swift */,
 				6A6728F919EE21B60026F8C9 /* Utils.swift */,
 				5D23FCFD19D21A02003F5F4E /* Supporting Files */,
+				A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */,
+				A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */,
 			);
 			path = DesignPatternsInSwift;
 			sourceTree = "<group>";
@@ -233,7 +239,9 @@
 				5D23FD0219D21A02003F5F4E /* GameViewController.swift in Sources */,
 				5D23FD2019D21CB4003F5F4E /* GameView.swift in Sources */,
 				6A6728FA19EE21B60026F8C9 /* Utils.swift in Sources */,
+				A91578C91D6C3CFF0027E9BE /* ShapeViewFactory.swift in Sources */,
 				5D23FD2419D223C0003F5F4E /* ShapeView.swift in Sources */,
+				A91578CB1D6C43E20027E9BE /* ShapeFactory.swift in Sources */,
 				5D23FD0019D21A02003F5F4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
