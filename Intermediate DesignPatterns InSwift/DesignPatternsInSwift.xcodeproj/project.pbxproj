@@ -20,6 +20,8 @@
 		A91578C91D6C3CFF0027E9BE /* ShapeViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */; };
 		A91578CB1D6C43E20027E9BE /* ShapeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */; };
 		A91578CD1D6C4C760027E9BE /* ShapeViewBullder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578CC1D6C4C760027E9BE /* ShapeViewBullder.swift */; };
+		A91578D11D6C540E0027E9BE /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578D01D6C540E0027E9BE /* Turn.swift */; };
+		A91578D31D6C711D0027E9BE /* TurnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91578D21D6C711D0027E9BE /* TurnController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeViewFactory.swift; sourceTree = "<group>"; };
 		A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeFactory.swift; sourceTree = "<group>"; };
 		A91578CC1D6C4C760027E9BE /* ShapeViewBullder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeViewBullder.swift; sourceTree = "<group>"; };
+		A91578D01D6C540E0027E9BE /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
+		A91578D21D6C711D0027E9BE /* TurnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				A91578C81D6C3CFF0027E9BE /* ShapeViewFactory.swift */,
 				A91578CA1D6C43E20027E9BE /* ShapeFactory.swift */,
 				A91578CC1D6C4C760027E9BE /* ShapeViewBullder.swift */,
+				A91578D01D6C540E0027E9BE /* Turn.swift */,
+				A91578D21D6C711D0027E9BE /* TurnController.swift */,
 			);
 			path = DesignPatternsInSwift;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91578D11D6C540E0027E9BE /* Turn.swift in Sources */,
 				5D23FD2619D23F9B003F5F4E /* Shape.swift in Sources */,
 				5D23FD0219D21A02003F5F4E /* GameViewController.swift in Sources */,
 				5D23FD2019D21CB4003F5F4E /* GameView.swift in Sources */,
@@ -247,6 +254,7 @@
 				5D23FD2419D223C0003F5F4E /* ShapeView.swift in Sources */,
 				A91578CB1D6C43E20027E9BE /* ShapeFactory.swift in Sources */,
 				5D23FD0019D21A02003F5F4E /* AppDelegate.swift in Sources */,
+				A91578D31D6C711D0027E9BE /* TurnController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
