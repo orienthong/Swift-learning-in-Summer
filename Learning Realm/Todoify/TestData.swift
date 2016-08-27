@@ -24,18 +24,19 @@ import Foundation
 import RealmSwift
 
 class TestData {
-  static func defaults() {
-    
-            let realm = try! Realm()
-            guard realm.isEmpty else {return}
-    
-            try! realm.write {
-                realm.add(Task(title: "Buy Milk", priority: 1))
-                realm.add(Task(title: "Run Marathon", priority: 0))
-    
-                realm.add(User(name: "Me"))
-                realm.add(User(name: "Others"))
-            }
-    
-  }
+    static func defaults() {
+        
+        let realm = try! Realm()
+        guard realm.isEmpty else {return}
+        
+        
+        try! realm.write {
+            realm.add(Task(title: "Buy Milk", priority: 1))
+            realm.add(Task(title: "Run Marathon", priority: 0))
+            
+            realm.add(User(name: "Me"))
+            realm.add(User(name: "Others"))
+        }
+        
+    }
 }

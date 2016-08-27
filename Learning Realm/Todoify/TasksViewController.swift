@@ -63,17 +63,22 @@ class TasksViewController: UITableViewController {
         switch changes {
         case .Initial(_):
             tableView.reloadData()
-        case .Update(_, let deletions, let insertions, modifications: _):
+        case .Update(_, let deletions, let insertions, let modifications):
             tableView.beginUpdates()
             
             tableView.insertRowsAtIndexPaths(insertions.map{NSIndexPath(forRow: $0, inSection: 0)},withRowAnimation: .Automatic)
             tableView.deleteRowsAtIndexPaths(deletions.map {NSIndexPath(forRow: $0, inSection: 0)},withRowAnimation: .Automatic)
-            
+            tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
+                                             withRowAnimation: .Automatic)
             tableView.endUpdates()
             break
         case .Error(let error):
             print(error)
         }
+    }
+    
+    deinit {
+        subscription?.stop()
     }
     @IBAction func toggleFilter(sender: UIButton) {
     sender.selected = !sender.selected

@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var config = Realm.Configuration()
     config.deleteRealmIfMigrationNeeded = true
     
+    
     Realm.Configuration.defaultConfiguration = config
     
     TestData.defaults()
