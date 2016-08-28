@@ -1,0 +1,6 @@
+framework module Pods_Agents_Partner {
+  umbrella header "Pods-Agents Partner-umbrella.h"
+
+  export *
+  module * { export * }
+}
