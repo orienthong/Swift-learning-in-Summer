@@ -65,7 +65,7 @@ class MovieDetailViewController: UIViewController {
                 }
                 
                 /* GUARD: Did we get a successful 2XX response? */
-                guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode , statusCode >= 200 && statusCode <= 299 else {
                     print("Your request returned a status code other than 2xx!")
                     return
                 }
@@ -123,10 +123,10 @@ class MovieDetailViewController: UIViewController {
                 
                 /* 2B. Build the URL */
                 let baseURL = NSURL(string: appDelegate.config.baseImageURLString)!
-                let url = baseURL.URLByAppendingPathComponent("w342").URLByAppendingPathComponent(posterPath)
+                let url = baseURL.URLByAppendingPathComponent("w342")!.URLByAppendingPathComponent(posterPath)
                 
                 /* 3B. Configure the request */
-                let request = NSURLRequest(URL: url)
+                let request = NSURLRequest(URL: url!)
                 
                 /* 4B. Make the request */
                 let task = appDelegate.sharedSession.dataTaskWithRequest(request) { (data, response, error) in
@@ -138,7 +138,7 @@ class MovieDetailViewController: UIViewController {
                     }
                     
                     /* GUARD: Did we get a successful 2XX response? */
-                    guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                    guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode , statusCode >= 200 && statusCode <= 299 else {
                         print("Your request returned a status code other than 2xx!")
                         return
                     }
@@ -232,17 +232,6 @@ class MovieDetailViewController: UIViewController {
             }
          }
         
-        /* 2/3. Build the URL, Configure the request */
-        
-        
-        /* 4. Make the request */
-        
-        /* 5. Parse the data */
-        /* 6. Use the data! */
-        /* 7. Start the request */
-        
-        /* If the favorite/unfavorite request completes, then use this code to update the UI...
-        */
         task.resume()
     }
 }

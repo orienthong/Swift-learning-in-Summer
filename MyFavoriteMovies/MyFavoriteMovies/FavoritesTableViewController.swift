@@ -55,7 +55,7 @@ class FavoritesTableViewController: UITableViewController {
             }
             
             /* GUARD: Did we get a successful 2XX response? */
-            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+            guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode , statusCode >= 200 && statusCode <= 299 else {
                 print("Your request returned a status code other than 2xx!")
                 return
             }
@@ -129,10 +129,10 @@ extension FavoritesTableViewController {
             
             /* 2. Build the URL */
             let baseURL = NSURL(string: appDelegate.config.baseImageURLString)!
-            let url = baseURL.URLByAppendingPathComponent("w154").URLByAppendingPathComponent(posterPath)
+            let url = baseURL.URLByAppendingPathComponent("w154")!.URLByAppendingPathComponent(posterPath)
             
             /* 3. Configure the request */
-            let request = NSURLRequest(URL: url)
+            let request = NSURLRequest(URL: url!)
             
             /* 4. Make the request */
             let task = appDelegate.sharedSession.dataTaskWithRequest(request) { (data, response, error) in
@@ -144,7 +144,7 @@ extension FavoritesTableViewController {
                 }
                 
                 /* GUARD: Did we get a successful 2XX response? */
-                guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode  where statusCode >= 200 && statusCode <= 299 else {
                     print("Your request returned a status code other than 2xx!")
                     return
                 }
